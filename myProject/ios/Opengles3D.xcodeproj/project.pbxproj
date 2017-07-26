@@ -1,0 +1,1084 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		75140CC21F1C60B1007DEC1B /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 75140CC11F1C60B1007DEC1B /* libc.tbd */; };
+		75140DA51F1CDB74007DEC1B /* 12345.png in Resources */ = {isa = PBXBuildFile; fileRef = 75140DA41F1CDB74007DEC1B /* 12345.png */; };
+		751491C01F286C0700422917 /* FrameBufferView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 751491BF1F286C0700422917 /* FrameBufferView.mm */; };
+		751A98071F23629E008829A7 /* one_texture_shader2.frag in Resources */ = {isa = PBXBuildFile; fileRef = 751A98061F23629E008829A7 /* one_texture_shader2.frag */; };
+		752D39211F2895AE001859FF /* GaussianBlurView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 752D39201F2895AE001859FF /* GaussianBlurView.mm */; };
+		752D39241F2895C2001859FF /* GaussianBlurController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752D39231F2895C2001859FF /* GaussianBlurController.m */; };
+		752D39271F289745001859FF /* gaussian_blur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 752D39251F289745001859FF /* gaussian_blur.cpp */; };
+		753B6FED1F222253009F8FFE /* BlendController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 753B6FEC1F222253009F8FFE /* BlendController.mm */; };
+		753B6FF01F22226C009F8FFE /* xl_blend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 753B6FEE1F22226C009F8FFE /* xl_blend.cpp */; };
+		753B6FF31F222350009F8FFE /* xl_blend_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 753B6FF11F222350009F8FFE /* xl_blend_shader.frag */; };
+		753B6FF41F222350009F8FFE /* xl_blend_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 753B6FF21F222350009F8FFE /* xl_blend_shader.vs */; };
+		753B6FFB1F223629009F8FFE /* scale_filter_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 753B6FF91F223629009F8FFE /* scale_filter_shader.vs */; };
+		753B6FFC1F223629009F8FFE /* scale_filter_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 753B6FFA1F223629009F8FFE /* scale_filter_shader.frag */; };
+		756EBB2C1F284CA100C2B479 /* FrameBufferController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756EBB2B1F284CA100C2B479 /* FrameBufferController.m */; };
+		756EBB341F284CEE00C2B479 /* frame_buffer_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 756EBB301F284CEE00C2B479 /* frame_buffer_shader.frag */; };
+		756EBB351F284CEE00C2B479 /* frame_buffer_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 756EBB311F284CEE00C2B479 /* frame_buffer_shader.vs */; };
+		756EBB361F284CEE00C2B479 /* frame_buffer_shader2.frag in Resources */ = {isa = PBXBuildFile; fileRef = 756EBB321F284CEE00C2B479 /* frame_buffer_shader2.frag */; };
+		756EBB371F284CEE00C2B479 /* frame_buffer_shader2.vs in Resources */ = {isa = PBXBuildFile; fileRef = 756EBB331F284CEE00C2B479 /* frame_buffer_shader2.vs */; };
+		757B884C1F219724006A79DB /* Filter1Controller.mm in Sources */ = {isa = PBXBuildFile; fileRef = 757B884B1F219724006A79DB /* Filter1Controller.mm */; };
+		757B884F1F219748006A79DB /* filter_demo1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 757B884D1F219748006A79DB /* filter_demo1.cpp */; };
+		757B88511F219A45006A79DB /* sj_20160705_2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 757B88501F219A45006A79DB /* sj_20160705_2.JPG */; };
+		757B88531F219EE5006A79DB /* IMG_1805.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 757B88521F219EE5006A79DB /* IMG_1805.PNG */; };
+		757B88571F21AA2C006A79DB /* Filter2Controller.mm in Sources */ = {isa = PBXBuildFile; fileRef = 757B88561F21AA2C006A79DB /* Filter2Controller.mm */; };
+		757B885A1F21AA4C006A79DB /* filter_demo2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 757B88581F21AA4C006A79DB /* filter_demo2.cpp */; };
+		757B885C1F21C78B006A79DB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757B885B1F21C78B006A79DB /* AVFoundation.framework */; };
+		757B885E1F21C8D6006A79DB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757B885D1F21C8D6006A79DB /* CoreMedia.framework */; };
+		757B88621F21DA3A006A79DB /* FilterScaleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 757B88611F21DA3A006A79DB /* FilterScaleController.mm */; };
+		757B88651F21DA48006A79DB /* filter_scale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 757B88631F21DA48006A79DB /* filter_scale.cpp */; };
+		75AD85431F23342400047E84 /* OneTextureController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75AD85421F23342400047E84 /* OneTextureController.mm */; };
+		75AD85461F23343400047E84 /* one_texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75AD85441F23343400047E84 /* one_texture.cpp */; };
+		75AD85491F23385000047E84 /* one_texture_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75AD85471F23385000047E84 /* one_texture_shader.frag */; };
+		75AD854A1F23385000047E84 /* one_texture_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75AD85481F23385000047E84 /* one_texture_shader.vs */; };
+		75C78C011F2608D1007D76FD /* color_shake_shader2.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75C78BFF1F2608D1007D76FD /* color_shake_shader2.vs */; };
+		75C78C021F2608D1007D76FD /* color_shke_shader2.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75C78C001F2608D1007D76FD /* color_shke_shader2.frag */; };
+		75C78C041F260959007D76FD /* ID_44.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 75C78C031F260959007D76FD /* ID_44.bmp */; };
+		75C78C071F260B18007D76FD /* color_shake_shader3.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75C78C051F260B18007D76FD /* color_shake_shader3.frag */; };
+		75C78C081F260B18007D76FD /* color_shake_shader3.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75C78C061F260B18007D76FD /* color_shake_shader3.vs */; };
+		75C78C0B1F263322007D76FD /* one_texture_shader4.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75C78C091F263322007D76FD /* one_texture_shader4.frag */; };
+		75C78C0C1F263322007D76FD /* one_texture_shader4.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75C78C0A1F263322007D76FD /* one_texture_shader4.vs */; };
+		75C78C0F1F263A82007D76FD /* sj_20160705_2_05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 75C78C0D1F263A82007D76FD /* sj_20160705_2_05.jpg */; };
+		75C78C101F263A82007D76FD /* sj_20160705_2_025.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 75C78C0E1F263A82007D76FD /* sj_20160705_2_025.jpg */; };
+		75CBAAB71F2875B9001E569C /* GLUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 75CBAAB51F2875B9001E569C /* GLUtil.c */; };
+		75CBAABB1F287630001E569C /* frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 75CBAAB91F287630001E569C /* frag.glsl */; };
+		75CBAABC1F287630001E569C /* vert.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 75CBAABA1F287630001E569C /* vert.glsl */; };
+		75CBAABF1F287760001E569C /* framebuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75CBAABD1F287760001E569C /* framebuffer.cpp */; };
+		75CBAAC61F287A7D001E569C /* new_opengles_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75CBAAC41F287A7D001E569C /* new_opengles_base.cpp */; };
+		75CBAAC91F288482001E569C /* OpenGLESView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CBAAC81F288482001E569C /* OpenGLESView.m */; };
+		75CBAACD1F2886C8001E569C /* DoubleSampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CBAACC1F2886C8001E569C /* DoubleSampleController.m */; };
+		75CBAAD01F2886DB001E569C /* DoubleSampleView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75CBAACF1F2886DB001E569C /* DoubleSampleView.mm */; };
+		75CBAAD41F2887AA001E569C /* double_sample_shader_bw.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75CBAAD11F2887AA001E569C /* double_sample_shader_bw.frag */; };
+		75CBAAD51F2887AA001E569C /* double_sample_shader_mosaic.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75CBAAD21F2887AA001E569C /* double_sample_shader_mosaic.frag */; };
+		75CBAAD61F2887AA001E569C /* double_sample_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75CBAAD31F2887AA001E569C /* double_sample_shader.vs */; };
+		75CBAAD91F2887C6001E569C /* double_sample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75CBAAD71F2887C6001E569C /* double_sample.cpp */; };
+		75D1B2331F26EB4B00609457 /* blur_shader2.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75D1B2311F26EB4B00609457 /* blur_shader2.frag */; };
+		75D1B2341F26EB4B00609457 /* blur_shader2.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75D1B2321F26EB4B00609457 /* blur_shader2.vs */; };
+		75D1B2371F27068100609457 /* blur_shader3.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75D1B2351F27068100609457 /* blur_shader3.frag */; };
+		75D1B2381F27068100609457 /* blur_shader3.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75D1B2361F27068100609457 /* blur_shader3.vs */; };
+		75D9B4AC1F258C5A0098E816 /* one_texture_shader3.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B4AA1F258C5A0098E816 /* one_texture_shader3.frag */; };
+		75D9B4AD1F258C5A0098E816 /* one_texture_shader3.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B4AB1F258C5A0098E816 /* one_texture_shader3.vs */; };
+		75D9B4D11F2597B50098E816 /* 3d_demo1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4B11F2597B50098E816 /* 3d_demo1.cpp */; };
+		75D9B4D21F2597B50098E816 /* 3d_demo1_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B4B31F2597B50098E816 /* 3d_demo1_shader.frag */; };
+		75D9B4D31F2597B50098E816 /* 3d_demo1_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B4B41F2597B50098E816 /* 3d_demo1_shader.vs */; };
+		75D9B4D41F2597B50098E816 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4B61F2597B50098E816 /* ViewController.mm */; };
+		75D9B4D51F2597B50098E816 /* 3d_demo2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4B81F2597B50098E816 /* 3d_demo2.cpp */; };
+		75D9B4D61F2597B50098E816 /* demo2shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B4BA1F2597B50098E816 /* demo2shader.frag */; };
+		75D9B4D71F2597B50098E816 /* demo2shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B4BB1F2597B50098E816 /* demo2shader.vs */; };
+		75D9B4D81F2597B50098E816 /* Demo2ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4BD1F2597B50098E816 /* Demo2ViewController.mm */; };
+		75D9B4D91F2597B50098E816 /* 3d_demo3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4BF1F2597B50098E816 /* 3d_demo3.cpp */; };
+		75D9B4DA1F2597B50098E816 /* demo3_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4C11F2597B50098E816 /* demo3_data.cpp */; };
+		75D9B4DB1F2597B50098E816 /* Demo3ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4C41F2597B50098E816 /* Demo3ViewController.mm */; };
+		75D9B4DC1F2597B50098E816 /* 3d_demo4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4C61F2597B50098E816 /* 3d_demo4.cpp */; };
+		75D9B4DD1F2597B50098E816 /* demo4_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4C81F2597B50098E816 /* demo4_data.cpp */; };
+		75D9B4DE1F2597B50098E816 /* Demo4ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4CB1F2597B50098E816 /* Demo4ViewController.mm */; };
+		75D9B4DF1F2597B50098E816 /* 3d_demo5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4CD1F2597B50098E816 /* 3d_demo5.cpp */; };
+		75D9B4E01F2597B50098E816 /* Demo5ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4D01F2597B50098E816 /* Demo5ViewController.mm */; };
+		75D9B4E41F2598650098E816 /* EdgeDetectionController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4E31F2598650098E816 /* EdgeDetectionController.mm */; };
+		75D9B4E71F2598820098E816 /* edge_detection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4E51F2598810098E816 /* edge_detection.cpp */; };
+		75D9B4EA1F25998E0098E816 /* edge_detection_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B4E81F25998E0098E816 /* edge_detection_shader.frag */; };
+		75D9B4EB1F25998E0098E816 /* edge_detection_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B4E91F25998E0098E816 /* edge_detection_shader.vs */; };
+		75D9B4EF1F259A690098E816 /* ColorShakeController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4EE1F259A690098E816 /* ColorShakeController.mm */; };
+		75D9B4F21F259A770098E816 /* color_shake.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4F01F259A770098E816 /* color_shake.cpp */; };
+		75D9B4F51F259AB60098E816 /* color_shake_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B4F31F259AB60098E816 /* color_shake_shader.frag */; };
+		75D9B4F61F259AB60098E816 /* color_shake_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B4F41F259AB60098E816 /* color_shake_shader.vs */; };
+		75D9B4FA1F25A5240098E816 /* BlurController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4F91F25A5240098E816 /* BlurController.mm */; };
+		75D9B4FD1F25A5730098E816 /* filter_blur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B4FB1F25A5730098E816 /* filter_blur.cpp */; };
+		75D9B5001F25A5F40098E816 /* filter_blur_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B4FE1F25A5F40098E816 /* filter_blur_shader.frag */; };
+		75D9B5011F25A5F40098E816 /* filter_blur_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B4FF1F25A5F40098E816 /* filter_blur_shader.vs */; };
+		75D9B5051F25EE130098E816 /* SobelEdgeController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B5041F25EE130098E816 /* SobelEdgeController.mm */; };
+		75D9B5081F25EE430098E816 /* sobel_edge_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B5061F25EE430098E816 /* sobel_edge_shader.frag */; };
+		75D9B5091F25EE430098E816 /* sobel_edge_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75D9B5071F25EE430098E816 /* sobel_edge_shader.vs */; };
+		75D9B50C1F25EEB40098E816 /* sobel_edge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75D9B50A1F25EEB40098E816 /* sobel_edge.cpp */; };
+		75E8328C1F17125A00F53588 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E8328B1F17125A00F53588 /* main.m */; };
+		75E8328F1F17125A00F53588 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E8328E1F17125A00F53588 /* AppDelegate.m */; };
+		75E832951F17125A00F53588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E832931F17125A00F53588 /* Main.storyboard */; };
+		75E832971F17125A00F53588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E832961F17125A00F53588 /* Assets.xcassets */; };
+		75E8329A1F17125A00F53588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E832981F17125A00F53588 /* LaunchScreen.storyboard */; };
+		75E832AA1F17128F00F53588 /* esTransform.c in Sources */ = {isa = PBXBuildFile; fileRef = 75E832A21F17128F00F53588 /* esTransform.c */; };
+		75E832AB1F17128F00F53588 /* esUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 75E832A31F17128F00F53588 /* esUtil.c */; };
+		75E832AC1F17128F00F53588 /* FileWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E832A71F17128F00F53588 /* FileWrapper.m */; };
+		75E832AD1F17128F00F53588 /* shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75E832A81F17128F00F53588 /* shader.frag */; };
+		75E832AE1F17128F00F53588 /* shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75E832A91F17128F00F53588 /* shader.vs */; };
+		75E832B81F17147D00F53588 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E832B71F17147D00F53588 /* GLKit.framework */; };
+		75E832BA1F17148300F53588 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E832B91F17148300F53588 /* OpenGLES.framework */; };
+		75E832BD1F1714C800F53588 /* IMG_1072.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 75E832BB1F1714C800F53588 /* IMG_1072.PNG */; };
+		75E832BE1F1714C800F53588 /* sj_20160705_1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 75E832BC1F1714C800F53588 /* sj_20160705_1.JPG */; };
+		75E832C51F171EBC00F53588 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E832C41F171EBC00F53588 /* RootViewController.m */; };
+		75E832D11F1722D300F53588 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E832D01F1722D300F53588 /* NSArray+Safe.m */; };
+		75E832D41F17478A00F53588 /* UIViewController+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E832D31F17478A00F53588 /* UIViewController+Safe.m */; };
+		75E832DF1F174B7700F53588 /* BaseGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E832DE1F174B7700F53588 /* BaseGLKViewController.m */; };
+		75E832E31F174D2900F53588 /* OpenglesTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E832E21F174D2900F53588 /* OpenglesTool.m */; };
+		75E832E61F174EEC00F53588 /* OpenglesBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E832E41F174EEC00F53588 /* OpenglesBase.cpp */; };
+		75F9BB191F27330A00BAFF9F /* GPUImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F9BB181F27330A00BAFF9F /* GPUImageController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		75140CC11F1C60B1007DEC1B /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
+		75140DA41F1CDB74007DEC1B /* 12345.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12345.png; sourceTree = "<group>"; };
+		751491BE1F286C0700422917 /* FrameBufferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameBufferView.h; sourceTree = "<group>"; };
+		751491BF1F286C0700422917 /* FrameBufferView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FrameBufferView.mm; sourceTree = "<group>"; };
+		751A98061F23629E008829A7 /* one_texture_shader2.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = one_texture_shader2.frag; sourceTree = "<group>"; };
+		752D391F1F2895AE001859FF /* GaussianBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussianBlurView.h; sourceTree = "<group>"; };
+		752D39201F2895AE001859FF /* GaussianBlurView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GaussianBlurView.mm; sourceTree = "<group>"; };
+		752D39221F2895C2001859FF /* GaussianBlurController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussianBlurController.h; sourceTree = "<group>"; };
+		752D39231F2895C2001859FF /* GaussianBlurController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaussianBlurController.m; sourceTree = "<group>"; };
+		752D39251F289745001859FF /* gaussian_blur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gaussian_blur.cpp; sourceTree = "<group>"; };
+		752D39261F289745001859FF /* gaussian_blur.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gaussian_blur.hpp; sourceTree = "<group>"; };
+		753B6FEB1F222253009F8FFE /* BlendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlendController.h; sourceTree = "<group>"; };
+		753B6FEC1F222253009F8FFE /* BlendController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BlendController.mm; sourceTree = "<group>"; };
+		753B6FEE1F22226C009F8FFE /* xl_blend.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xl_blend.cpp; sourceTree = "<group>"; };
+		753B6FEF1F22226C009F8FFE /* xl_blend.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = xl_blend.hpp; sourceTree = "<group>"; };
+		753B6FF11F222350009F8FFE /* xl_blend_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = xl_blend_shader.frag; sourceTree = "<group>"; };
+		753B6FF21F222350009F8FFE /* xl_blend_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = xl_blend_shader.vs; sourceTree = "<group>"; };
+		753B6FF91F223629009F8FFE /* scale_filter_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = scale_filter_shader.vs; sourceTree = "<group>"; };
+		753B6FFA1F223629009F8FFE /* scale_filter_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = scale_filter_shader.frag; sourceTree = "<group>"; };
+		756EBB2A1F284CA100C2B479 /* FrameBufferController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameBufferController.h; sourceTree = "<group>"; };
+		756EBB2B1F284CA100C2B479 /* FrameBufferController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameBufferController.m; sourceTree = "<group>"; };
+		756EBB301F284CEE00C2B479 /* frame_buffer_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = frame_buffer_shader.frag; sourceTree = "<group>"; };
+		756EBB311F284CEE00C2B479 /* frame_buffer_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = frame_buffer_shader.vs; sourceTree = "<group>"; };
+		756EBB321F284CEE00C2B479 /* frame_buffer_shader2.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = frame_buffer_shader2.frag; sourceTree = "<group>"; };
+		756EBB331F284CEE00C2B479 /* frame_buffer_shader2.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = frame_buffer_shader2.vs; sourceTree = "<group>"; };
+		757B884A1F219724006A79DB /* Filter1Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter1Controller.h; sourceTree = "<group>"; };
+		757B884B1F219724006A79DB /* Filter1Controller.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Filter1Controller.mm; sourceTree = "<group>"; };
+		757B884D1F219748006A79DB /* filter_demo1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = filter_demo1.cpp; sourceTree = "<group>"; };
+		757B884E1F219748006A79DB /* filter_demo1.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = filter_demo1.hpp; sourceTree = "<group>"; };
+		757B88501F219A45006A79DB /* sj_20160705_2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sj_20160705_2.JPG; sourceTree = "<group>"; };
+		757B88521F219EE5006A79DB /* IMG_1805.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_1805.PNG; sourceTree = "<group>"; };
+		757B88551F21AA2C006A79DB /* Filter2Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter2Controller.h; sourceTree = "<group>"; };
+		757B88561F21AA2C006A79DB /* Filter2Controller.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Filter2Controller.mm; sourceTree = "<group>"; };
+		757B88581F21AA4C006A79DB /* filter_demo2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = filter_demo2.cpp; sourceTree = "<group>"; };
+		757B88591F21AA4C006A79DB /* filter_demo2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = filter_demo2.hpp; sourceTree = "<group>"; };
+		757B885B1F21C78B006A79DB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		757B885D1F21C8D6006A79DB /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		757B88601F21DA3A006A79DB /* FilterScaleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterScaleController.h; sourceTree = "<group>"; };
+		757B88611F21DA3A006A79DB /* FilterScaleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FilterScaleController.mm; sourceTree = "<group>"; };
+		757B88631F21DA48006A79DB /* filter_scale.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = filter_scale.cpp; sourceTree = "<group>"; };
+		757B88641F21DA48006A79DB /* filter_scale.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = filter_scale.hpp; sourceTree = "<group>"; };
+		75AD85411F23342400047E84 /* OneTextureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneTextureController.h; sourceTree = "<group>"; };
+		75AD85421F23342400047E84 /* OneTextureController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OneTextureController.mm; sourceTree = "<group>"; };
+		75AD85441F23343400047E84 /* one_texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = one_texture.cpp; sourceTree = "<group>"; };
+		75AD85451F23343400047E84 /* one_texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = one_texture.hpp; sourceTree = "<group>"; };
+		75AD85471F23385000047E84 /* one_texture_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = one_texture_shader.frag; sourceTree = "<group>"; };
+		75AD85481F23385000047E84 /* one_texture_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = one_texture_shader.vs; sourceTree = "<group>"; };
+		75C78BFF1F2608D1007D76FD /* color_shake_shader2.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = color_shake_shader2.vs; sourceTree = "<group>"; };
+		75C78C001F2608D1007D76FD /* color_shke_shader2.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = color_shke_shader2.frag; sourceTree = "<group>"; };
+		75C78C031F260959007D76FD /* ID_44.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = ID_44.bmp; sourceTree = "<group>"; };
+		75C78C051F260B18007D76FD /* color_shake_shader3.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = color_shake_shader3.frag; sourceTree = "<group>"; };
+		75C78C061F260B18007D76FD /* color_shake_shader3.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = color_shake_shader3.vs; sourceTree = "<group>"; };
+		75C78C091F263322007D76FD /* one_texture_shader4.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = one_texture_shader4.frag; sourceTree = "<group>"; };
+		75C78C0A1F263322007D76FD /* one_texture_shader4.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = one_texture_shader4.vs; sourceTree = "<group>"; };
+		75C78C0D1F263A82007D76FD /* sj_20160705_2_05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sj_20160705_2_05.jpg; sourceTree = "<group>"; };
+		75C78C0E1F263A82007D76FD /* sj_20160705_2_025.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sj_20160705_2_025.jpg; sourceTree = "<group>"; };
+		75CBAAB51F2875B9001E569C /* GLUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GLUtil.c; sourceTree = "<group>"; };
+		75CBAAB61F2875B9001E569C /* GLUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLUtil.h; sourceTree = "<group>"; };
+		75CBAAB91F287630001E569C /* frag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = frag.glsl; sourceTree = "<group>"; };
+		75CBAABA1F287630001E569C /* vert.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vert.glsl; sourceTree = "<group>"; };
+		75CBAABD1F287760001E569C /* framebuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framebuffer.cpp; sourceTree = "<group>"; };
+		75CBAABE1F287760001E569C /* framebuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = framebuffer.hpp; sourceTree = "<group>"; };
+		75CBAAC41F287A7D001E569C /* new_opengles_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = new_opengles_base.cpp; sourceTree = "<group>"; };
+		75CBAAC51F287A7D001E569C /* new_opengles_base.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = new_opengles_base.hpp; sourceTree = "<group>"; };
+		75CBAAC71F288482001E569C /* OpenGLESView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLESView.h; sourceTree = "<group>"; };
+		75CBAAC81F288482001E569C /* OpenGLESView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLESView.m; sourceTree = "<group>"; };
+		75CBAACB1F2886C8001E569C /* DoubleSampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleSampleController.h; sourceTree = "<group>"; };
+		75CBAACC1F2886C8001E569C /* DoubleSampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleSampleController.m; sourceTree = "<group>"; };
+		75CBAACE1F2886DB001E569C /* DoubleSampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleSampleView.h; sourceTree = "<group>"; };
+		75CBAACF1F2886DB001E569C /* DoubleSampleView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DoubleSampleView.mm; sourceTree = "<group>"; };
+		75CBAAD11F2887AA001E569C /* double_sample_shader_bw.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = double_sample_shader_bw.frag; sourceTree = "<group>"; };
+		75CBAAD21F2887AA001E569C /* double_sample_shader_mosaic.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = double_sample_shader_mosaic.frag; sourceTree = "<group>"; };
+		75CBAAD31F2887AA001E569C /* double_sample_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = double_sample_shader.vs; sourceTree = "<group>"; };
+		75CBAAD71F2887C6001E569C /* double_sample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = double_sample.cpp; sourceTree = "<group>"; };
+		75CBAAD81F2887C6001E569C /* double_sample.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = double_sample.hpp; sourceTree = "<group>"; };
+		75D1B2311F26EB4B00609457 /* blur_shader2.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = blur_shader2.frag; sourceTree = "<group>"; };
+		75D1B2321F26EB4B00609457 /* blur_shader2.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = blur_shader2.vs; sourceTree = "<group>"; };
+		75D1B2351F27068100609457 /* blur_shader3.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = blur_shader3.frag; sourceTree = "<group>"; };
+		75D1B2361F27068100609457 /* blur_shader3.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = blur_shader3.vs; sourceTree = "<group>"; };
+		75D9B4AA1F258C5A0098E816 /* one_texture_shader3.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = one_texture_shader3.frag; sourceTree = "<group>"; };
+		75D9B4AB1F258C5A0098E816 /* one_texture_shader3.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = one_texture_shader3.vs; sourceTree = "<group>"; };
+		75D9B4B11F2597B50098E816 /* 3d_demo1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 3d_demo1.cpp; sourceTree = "<group>"; };
+		75D9B4B21F2597B50098E816 /* 3d_demo1.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = 3d_demo1.hpp; sourceTree = "<group>"; };
+		75D9B4B31F2597B50098E816 /* 3d_demo1_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3d_demo1_shader.frag; sourceTree = "<group>"; };
+		75D9B4B41F2597B50098E816 /* 3d_demo1_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3d_demo1_shader.vs; sourceTree = "<group>"; };
+		75D9B4B51F2597B50098E816 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		75D9B4B61F2597B50098E816 /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		75D9B4B81F2597B50098E816 /* 3d_demo2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 3d_demo2.cpp; sourceTree = "<group>"; };
+		75D9B4B91F2597B50098E816 /* 3d_demo2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = 3d_demo2.hpp; sourceTree = "<group>"; };
+		75D9B4BA1F2597B50098E816 /* demo2shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = demo2shader.frag; sourceTree = "<group>"; };
+		75D9B4BB1F2597B50098E816 /* demo2shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = demo2shader.vs; sourceTree = "<group>"; };
+		75D9B4BC1F2597B50098E816 /* Demo2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo2ViewController.h; sourceTree = "<group>"; };
+		75D9B4BD1F2597B50098E816 /* Demo2ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Demo2ViewController.mm; sourceTree = "<group>"; };
+		75D9B4BF1F2597B50098E816 /* 3d_demo3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 3d_demo3.cpp; sourceTree = "<group>"; };
+		75D9B4C01F2597B50098E816 /* 3d_demo3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = 3d_demo3.hpp; sourceTree = "<group>"; };
+		75D9B4C11F2597B50098E816 /* demo3_data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = demo3_data.cpp; sourceTree = "<group>"; };
+		75D9B4C21F2597B50098E816 /* demo3_data.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = demo3_data.hpp; sourceTree = "<group>"; };
+		75D9B4C31F2597B50098E816 /* Demo3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo3ViewController.h; sourceTree = "<group>"; };
+		75D9B4C41F2597B50098E816 /* Demo3ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Demo3ViewController.mm; sourceTree = "<group>"; };
+		75D9B4C61F2597B50098E816 /* 3d_demo4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 3d_demo4.cpp; sourceTree = "<group>"; };
+		75D9B4C71F2597B50098E816 /* 3d_demo4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = 3d_demo4.hpp; sourceTree = "<group>"; };
+		75D9B4C81F2597B50098E816 /* demo4_data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = demo4_data.cpp; sourceTree = "<group>"; };
+		75D9B4C91F2597B50098E816 /* demo4_data.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = demo4_data.hpp; sourceTree = "<group>"; };
+		75D9B4CA1F2597B50098E816 /* Demo4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo4ViewController.h; sourceTree = "<group>"; };
+		75D9B4CB1F2597B50098E816 /* Demo4ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Demo4ViewController.mm; sourceTree = "<group>"; };
+		75D9B4CD1F2597B50098E816 /* 3d_demo5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 3d_demo5.cpp; sourceTree = "<group>"; };
+		75D9B4CE1F2597B50098E816 /* 3d_demo5.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = 3d_demo5.hpp; sourceTree = "<group>"; };
+		75D9B4CF1F2597B50098E816 /* Demo5ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo5ViewController.h; sourceTree = "<group>"; };
+		75D9B4D01F2597B50098E816 /* Demo5ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Demo5ViewController.mm; sourceTree = "<group>"; };
+		75D9B4E21F2598650098E816 /* EdgeDetectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeDetectionController.h; sourceTree = "<group>"; };
+		75D9B4E31F2598650098E816 /* EdgeDetectionController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EdgeDetectionController.mm; sourceTree = "<group>"; };
+		75D9B4E51F2598810098E816 /* edge_detection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = edge_detection.cpp; sourceTree = "<group>"; };
+		75D9B4E61F2598810098E816 /* edge_detection.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = edge_detection.hpp; sourceTree = "<group>"; };
+		75D9B4E81F25998E0098E816 /* edge_detection_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = edge_detection_shader.frag; sourceTree = "<group>"; };
+		75D9B4E91F25998E0098E816 /* edge_detection_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = edge_detection_shader.vs; sourceTree = "<group>"; };
+		75D9B4ED1F259A690098E816 /* ColorShakeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorShakeController.h; sourceTree = "<group>"; };
+		75D9B4EE1F259A690098E816 /* ColorShakeController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ColorShakeController.mm; sourceTree = "<group>"; };
+		75D9B4F01F259A770098E816 /* color_shake.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = color_shake.cpp; sourceTree = "<group>"; };
+		75D9B4F11F259A770098E816 /* color_shake.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = color_shake.hpp; sourceTree = "<group>"; };
+		75D9B4F31F259AB60098E816 /* color_shake_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = color_shake_shader.frag; sourceTree = "<group>"; };
+		75D9B4F41F259AB60098E816 /* color_shake_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = color_shake_shader.vs; sourceTree = "<group>"; };
+		75D9B4F81F25A5240098E816 /* BlurController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurController.h; sourceTree = "<group>"; };
+		75D9B4F91F25A5240098E816 /* BlurController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BlurController.mm; sourceTree = "<group>"; };
+		75D9B4FB1F25A5730098E816 /* filter_blur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = filter_blur.cpp; sourceTree = "<group>"; };
+		75D9B4FC1F25A5730098E816 /* filter_blur.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = filter_blur.hpp; sourceTree = "<group>"; };
+		75D9B4FE1F25A5F40098E816 /* filter_blur_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = filter_blur_shader.frag; sourceTree = "<group>"; };
+		75D9B4FF1F25A5F40098E816 /* filter_blur_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = filter_blur_shader.vs; sourceTree = "<group>"; };
+		75D9B5031F25EE130098E816 /* SobelEdgeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SobelEdgeController.h; sourceTree = "<group>"; };
+		75D9B5041F25EE130098E816 /* SobelEdgeController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SobelEdgeController.mm; sourceTree = "<group>"; };
+		75D9B5061F25EE430098E816 /* sobel_edge_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sobel_edge_shader.frag; sourceTree = "<group>"; };
+		75D9B5071F25EE430098E816 /* sobel_edge_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sobel_edge_shader.vs; sourceTree = "<group>"; };
+		75D9B50A1F25EEB40098E816 /* sobel_edge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sobel_edge.cpp; sourceTree = "<group>"; };
+		75D9B50B1F25EEB40098E816 /* sobel_edge.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sobel_edge.hpp; sourceTree = "<group>"; };
+		75E832871F17125A00F53588 /* Opengles3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Opengles3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75E8328B1F17125A00F53588 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		75E8328D1F17125A00F53588 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		75E8328E1F17125A00F53588 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		75E832941F17125A00F53588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		75E832961F17125A00F53588 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		75E832991F17125A00F53588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		75E8329B1F17125A00F53588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75E832A21F17128F00F53588 /* esTransform.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = esTransform.c; sourceTree = "<group>"; };
+		75E832A31F17128F00F53588 /* esUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = esUtil.c; sourceTree = "<group>"; };
+		75E832A41F17128F00F53588 /* esUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = esUtil.h; sourceTree = "<group>"; };
+		75E832A51F17128F00F53588 /* esUtil_win.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = esUtil_win.h; sourceTree = "<group>"; };
+		75E832A61F17128F00F53588 /* FileWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileWrapper.h; sourceTree = "<group>"; };
+		75E832A71F17128F00F53588 /* FileWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileWrapper.m; sourceTree = "<group>"; };
+		75E832A81F17128F00F53588 /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
+		75E832A91F17128F00F53588 /* shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vs; sourceTree = "<group>"; };
+		75E832B31F17144D00F53588 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		75E832B51F17145400F53588 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		75E832B71F17147D00F53588 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		75E832B91F17148300F53588 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		75E832BB1F1714C800F53588 /* IMG_1072.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_1072.PNG; sourceTree = "<group>"; };
+		75E832BC1F1714C800F53588 /* sj_20160705_1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sj_20160705_1.JPG; sourceTree = "<group>"; };
+		75E832C31F171EBC00F53588 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		75E832C41F171EBC00F53588 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		75E832CF1F1722D300F53588 /* NSArray+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Safe.h"; sourceTree = "<group>"; };
+		75E832D01F1722D300F53588 /* NSArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
+		75E832D21F17478A00F53588 /* UIViewController+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Safe.h"; sourceTree = "<group>"; };
+		75E832D31F17478A00F53588 /* UIViewController+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Safe.m"; sourceTree = "<group>"; };
+		75E832DD1F174B7700F53588 /* BaseGLKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseGLKViewController.h; sourceTree = "<group>"; };
+		75E832DE1F174B7700F53588 /* BaseGLKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseGLKViewController.m; sourceTree = "<group>"; };
+		75E832E11F174D2900F53588 /* OpenglesTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenglesTool.h; sourceTree = "<group>"; };
+		75E832E21F174D2900F53588 /* OpenglesTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenglesTool.m; sourceTree = "<group>"; };
+		75E832E41F174EEC00F53588 /* OpenglesBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenglesBase.cpp; sourceTree = "<group>"; };
+		75E832E51F174EEC00F53588 /* OpenglesBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OpenglesBase.hpp; sourceTree = "<group>"; };
+		75F827AE1F18A1EB001C219E /* demo_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = demo_data.h; sourceTree = "<group>"; };
+		75F9BB171F27330A00BAFF9F /* GPUImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageController.h; sourceTree = "<group>"; };
+		75F9BB181F27330A00BAFF9F /* GPUImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		75E832841F17125A00F53588 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757B885E1F21C8D6006A79DB /* CoreMedia.framework in Frameworks */,
+				757B885C1F21C78B006A79DB /* AVFoundation.framework in Frameworks */,
+				75140CC21F1C60B1007DEC1B /* libc.tbd in Frameworks */,
+				75E832BA1F17148300F53588 /* OpenGLES.framework in Frameworks */,
+				75E832B81F17147D00F53588 /* GLKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		752D391E1F28957F001859FF /* GaussianBlur */ = {
+			isa = PBXGroup;
+			children = (
+				752D391F1F2895AE001859FF /* GaussianBlurView.h */,
+				752D39201F2895AE001859FF /* GaussianBlurView.mm */,
+				752D39221F2895C2001859FF /* GaussianBlurController.h */,
+				752D39231F2895C2001859FF /* GaussianBlurController.m */,
+				752D39251F289745001859FF /* gaussian_blur.cpp */,
+				752D39261F289745001859FF /* gaussian_blur.hpp */,
+			);
+			path = GaussianBlur;
+			sourceTree = "<group>";
+		};
+		753B6FEA1F222243009F8FFE /* Blend */ = {
+			isa = PBXGroup;
+			children = (
+				753B6FF11F222350009F8FFE /* xl_blend_shader.frag */,
+				753B6FF21F222350009F8FFE /* xl_blend_shader.vs */,
+				753B6FEB1F222253009F8FFE /* BlendController.h */,
+				753B6FEC1F222253009F8FFE /* BlendController.mm */,
+				753B6FEE1F22226C009F8FFE /* xl_blend.cpp */,
+				753B6FEF1F22226C009F8FFE /* xl_blend.hpp */,
+			);
+			path = Blend;
+			sourceTree = "<group>";
+		};
+		756EBB291F284C8B00C2B479 /* framebuffer */ = {
+			isa = PBXGroup;
+			children = (
+				75CBAAB81F287630001E569C /* Shader */,
+				756EBB301F284CEE00C2B479 /* frame_buffer_shader.frag */,
+				756EBB311F284CEE00C2B479 /* frame_buffer_shader.vs */,
+				756EBB321F284CEE00C2B479 /* frame_buffer_shader2.frag */,
+				756EBB331F284CEE00C2B479 /* frame_buffer_shader2.vs */,
+				756EBB2A1F284CA100C2B479 /* FrameBufferController.h */,
+				756EBB2B1F284CA100C2B479 /* FrameBufferController.m */,
+				751491BE1F286C0700422917 /* FrameBufferView.h */,
+				751491BF1F286C0700422917 /* FrameBufferView.mm */,
+				75CBAABD1F287760001E569C /* framebuffer.cpp */,
+				75CBAABE1F287760001E569C /* framebuffer.hpp */,
+			);
+			path = framebuffer;
+			sourceTree = "<group>";
+		};
+		757B88481F21970F006A79DB /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				75D9B4EC1F259A560098E816 /* ColorShake */,
+				75AD85401F23341200047E84 /* OneTexture */,
+				753B6FEA1F222243009F8FFE /* Blend */,
+				757B885F1F21DA23006A79DB /* FilterScale */,
+				757B88541F21AA1D006A79DB /* Filter2 */,
+				757B88491F21970F006A79DB /* Filter1 */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		757B88491F21970F006A79DB /* Filter1 */ = {
+			isa = PBXGroup;
+			children = (
+				753B6FF91F223629009F8FFE /* scale_filter_shader.vs */,
+				753B6FFA1F223629009F8FFE /* scale_filter_shader.frag */,
+				757B884A1F219724006A79DB /* Filter1Controller.h */,
+				757B884B1F219724006A79DB /* Filter1Controller.mm */,
+				757B884D1F219748006A79DB /* filter_demo1.cpp */,
+				757B884E1F219748006A79DB /* filter_demo1.hpp */,
+			);
+			path = Filter1;
+			sourceTree = "<group>";
+		};
+		757B88541F21AA1D006A79DB /* Filter2 */ = {
+			isa = PBXGroup;
+			children = (
+				757B88551F21AA2C006A79DB /* Filter2Controller.h */,
+				757B88561F21AA2C006A79DB /* Filter2Controller.mm */,
+				757B88581F21AA4C006A79DB /* filter_demo2.cpp */,
+				757B88591F21AA4C006A79DB /* filter_demo2.hpp */,
+			);
+			path = Filter2;
+			sourceTree = "<group>";
+		};
+		757B885F1F21DA23006A79DB /* FilterScale */ = {
+			isa = PBXGroup;
+			children = (
+				757B88601F21DA3A006A79DB /* FilterScaleController.h */,
+				757B88611F21DA3A006A79DB /* FilterScaleController.mm */,
+				757B88631F21DA48006A79DB /* filter_scale.cpp */,
+				757B88641F21DA48006A79DB /* filter_scale.hpp */,
+			);
+			path = FilterScale;
+			sourceTree = "<group>";
+		};
+		75AD85401F23341200047E84 /* OneTexture */ = {
+			isa = PBXGroup;
+			children = (
+				75C78C091F263322007D76FD /* one_texture_shader4.frag */,
+				75C78C0A1F263322007D76FD /* one_texture_shader4.vs */,
+				75D9B4AA1F258C5A0098E816 /* one_texture_shader3.frag */,
+				75D9B4AB1F258C5A0098E816 /* one_texture_shader3.vs */,
+				751A98061F23629E008829A7 /* one_texture_shader2.frag */,
+				75AD85471F23385000047E84 /* one_texture_shader.frag */,
+				75AD85481F23385000047E84 /* one_texture_shader.vs */,
+				75AD85411F23342400047E84 /* OneTextureController.h */,
+				75AD85421F23342400047E84 /* OneTextureController.mm */,
+				75AD85441F23343400047E84 /* one_texture.cpp */,
+				75AD85451F23343400047E84 /* one_texture.hpp */,
+			);
+			path = OneTexture;
+			sourceTree = "<group>";
+		};
+		75CBAAB81F287630001E569C /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				75CBAAB91F287630001E569C /* frag.glsl */,
+				75CBAABA1F287630001E569C /* vert.glsl */,
+			);
+			path = Shader;
+			sourceTree = "<group>";
+		};
+		75CBAACA1F2886A1001E569C /* DoubleSample */ = {
+			isa = PBXGroup;
+			children = (
+				75CBAAD11F2887AA001E569C /* double_sample_shader_bw.frag */,
+				75CBAAD21F2887AA001E569C /* double_sample_shader_mosaic.frag */,
+				75CBAAD31F2887AA001E569C /* double_sample_shader.vs */,
+				75CBAACB1F2886C8001E569C /* DoubleSampleController.h */,
+				75CBAACC1F2886C8001E569C /* DoubleSampleController.m */,
+				75CBAACE1F2886DB001E569C /* DoubleSampleView.h */,
+				75CBAACF1F2886DB001E569C /* DoubleSampleView.mm */,
+				75CBAAD71F2887C6001E569C /* double_sample.cpp */,
+				75CBAAD81F2887C6001E569C /* double_sample.hpp */,
+			);
+			path = DoubleSample;
+			sourceTree = "<group>";
+		};
+		75D9B4AE1F2597B50098E816 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				752D391E1F28957F001859FF /* GaussianBlur */,
+				75D9B5021F25EDFD0098E816 /* SobelEdge */,
+				75D9B4F71F25A50F0098E816 /* Blur */,
+				75D9B4E11F25984F0098E816 /* EdgeDetection */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		75D9B4AF1F2597B50098E816 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				75CBAACA1F2886A1001E569C /* DoubleSample */,
+				756EBB291F284C8B00C2B479 /* framebuffer */,
+				75F9BB161F2732EC00BAFF9F /* gpuimageTest */,
+				75D9B4B01F2597B50098E816 /* Demo1 */,
+				75D9B4B71F2597B50098E816 /* Demo2 */,
+				75D9B4BE1F2597B50098E816 /* Demo3 */,
+				75D9B4C51F2597B50098E816 /* Demo4 */,
+				75D9B4CC1F2597B50098E816 /* Demo5 */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		75D9B4B01F2597B50098E816 /* Demo1 */ = {
+			isa = PBXGroup;
+			children = (
+				75D9B4B11F2597B50098E816 /* 3d_demo1.cpp */,
+				75D9B4B21F2597B50098E816 /* 3d_demo1.hpp */,
+				75D9B4B31F2597B50098E816 /* 3d_demo1_shader.frag */,
+				75D9B4B41F2597B50098E816 /* 3d_demo1_shader.vs */,
+				75D9B4B51F2597B50098E816 /* ViewController.h */,
+				75D9B4B61F2597B50098E816 /* ViewController.mm */,
+			);
+			path = Demo1;
+			sourceTree = "<group>";
+		};
+		75D9B4B71F2597B50098E816 /* Demo2 */ = {
+			isa = PBXGroup;
+			children = (
+				75D9B4B81F2597B50098E816 /* 3d_demo2.cpp */,
+				75D9B4B91F2597B50098E816 /* 3d_demo2.hpp */,
+				75D9B4BA1F2597B50098E816 /* demo2shader.frag */,
+				75D9B4BB1F2597B50098E816 /* demo2shader.vs */,
+				75D9B4BC1F2597B50098E816 /* Demo2ViewController.h */,
+				75D9B4BD1F2597B50098E816 /* Demo2ViewController.mm */,
+			);
+			path = Demo2;
+			sourceTree = "<group>";
+		};
+		75D9B4BE1F2597B50098E816 /* Demo3 */ = {
+			isa = PBXGroup;
+			children = (
+				75D9B4BF1F2597B50098E816 /* 3d_demo3.cpp */,
+				75D9B4C01F2597B50098E816 /* 3d_demo3.hpp */,
+				75D9B4C11F2597B50098E816 /* demo3_data.cpp */,
+				75D9B4C21F2597B50098E816 /* demo3_data.hpp */,
+				75D9B4C31F2597B50098E816 /* Demo3ViewController.h */,
+				75D9B4C41F2597B50098E816 /* Demo3ViewController.mm */,
+			);
+			path = Demo3;
+			sourceTree = "<group>";
+		};
+		75D9B4C51F2597B50098E816 /* Demo4 */ = {
+			isa = PBXGroup;
+			children = (
+				75D9B4C61F2597B50098E816 /* 3d_demo4.cpp */,
+				75D9B4C71F2597B50098E816 /* 3d_demo4.hpp */,
+				75D9B4C81F2597B50098E816 /* demo4_data.cpp */,
+				75D9B4C91F2597B50098E816 /* demo4_data.hpp */,
+				75D9B4CA1F2597B50098E816 /* Demo4ViewController.h */,
+				75D9B4CB1F2597B50098E816 /* Demo4ViewController.mm */,
+			);
+			path = Demo4;
+			sourceTree = "<group>";
+		};
+		75D9B4CC1F2597B50098E816 /* Demo5 */ = {
+			isa = PBXGroup;
+			children = (
+				75D9B4CD1F2597B50098E816 /* 3d_demo5.cpp */,
+				75D9B4CE1F2597B50098E816 /* 3d_demo5.hpp */,
+				75D9B4CF1F2597B50098E816 /* Demo5ViewController.h */,
+				75D9B4D01F2597B50098E816 /* Demo5ViewController.mm */,
+			);
+			path = Demo5;
+			sourceTree = "<group>";
+		};
+		75D9B4E11F25984F0098E816 /* EdgeDetection */ = {
+			isa = PBXGroup;
+			children = (
+				75D9B4E81F25998E0098E816 /* edge_detection_shader.frag */,
+				75D9B4E91F25998E0098E816 /* edge_detection_shader.vs */,
+				75D9B4E21F2598650098E816 /* EdgeDetectionController.h */,
+				75D9B4E31F2598650098E816 /* EdgeDetectionController.mm */,
+				75D9B4E51F2598810098E816 /* edge_detection.cpp */,
+				75D9B4E61F2598810098E816 /* edge_detection.hpp */,
+			);
+			path = EdgeDetection;
+			sourceTree = "<group>";
+		};
+		75D9B4EC1F259A560098E816 /* ColorShake */ = {
+			isa = PBXGroup;
+			children = (
+				75C78C051F260B18007D76FD /* color_shake_shader3.frag */,
+				75C78C061F260B18007D76FD /* color_shake_shader3.vs */,
+				75C78BFF1F2608D1007D76FD /* color_shake_shader2.vs */,
+				75D9B4F31F259AB60098E816 /* color_shake_shader.frag */,
+				75C78C001F2608D1007D76FD /* color_shke_shader2.frag */,
+				75D9B4F41F259AB60098E816 /* color_shake_shader.vs */,
+				75D9B4ED1F259A690098E816 /* ColorShakeController.h */,
+				75D9B4EE1F259A690098E816 /* ColorShakeController.mm */,
+				75D9B4F01F259A770098E816 /* color_shake.cpp */,
+				75D9B4F11F259A770098E816 /* color_shake.hpp */,
+			);
+			path = ColorShake;
+			sourceTree = "<group>";
+		};
+		75D9B4F71F25A50F0098E816 /* Blur */ = {
+			isa = PBXGroup;
+			children = (
+				75D1B2351F27068100609457 /* blur_shader3.frag */,
+				75D1B2361F27068100609457 /* blur_shader3.vs */,
+				75D1B2311F26EB4B00609457 /* blur_shader2.frag */,
+				75D1B2321F26EB4B00609457 /* blur_shader2.vs */,
+				75D9B4FE1F25A5F40098E816 /* filter_blur_shader.frag */,
+				75D9B4FF1F25A5F40098E816 /* filter_blur_shader.vs */,
+				75D9B4F81F25A5240098E816 /* BlurController.h */,
+				75D9B4F91F25A5240098E816 /* BlurController.mm */,
+				75D9B4FB1F25A5730098E816 /* filter_blur.cpp */,
+				75D9B4FC1F25A5730098E816 /* filter_blur.hpp */,
+			);
+			path = Blur;
+			sourceTree = "<group>";
+		};
+		75D9B5021F25EDFD0098E816 /* SobelEdge */ = {
+			isa = PBXGroup;
+			children = (
+				75D9B5061F25EE430098E816 /* sobel_edge_shader.frag */,
+				75D9B5071F25EE430098E816 /* sobel_edge_shader.vs */,
+				75D9B5031F25EE130098E816 /* SobelEdgeController.h */,
+				75D9B5041F25EE130098E816 /* SobelEdgeController.mm */,
+				75D9B50A1F25EEB40098E816 /* sobel_edge.cpp */,
+				75D9B50B1F25EEB40098E816 /* sobel_edge.hpp */,
+			);
+			path = SobelEdge;
+			sourceTree = "<group>";
+		};
+		75E8327E1F17125A00F53588 = {
+			isa = PBXGroup;
+			children = (
+				75E832891F17125A00F53588 /* Opengles3D */,
+				75E832881F17125A00F53588 /* Products */,
+				75E832B21F17144D00F53588 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		75E832881F17125A00F53588 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75E832871F17125A00F53588 /* Opengles3D.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75E832891F17125A00F53588 /* Opengles3D */ = {
+			isa = PBXGroup;
+			children = (
+				75C78C0D1F263A82007D76FD /* sj_20160705_2_05.jpg */,
+				75C78C0E1F263A82007D76FD /* sj_20160705_2_025.jpg */,
+				75C78C031F260959007D76FD /* ID_44.bmp */,
+				757B88521F219EE5006A79DB /* IMG_1805.PNG */,
+				757B88501F219A45006A79DB /* sj_20160705_2.JPG */,
+				75140DA41F1CDB74007DEC1B /* 12345.png */,
+				75E832BB1F1714C800F53588 /* IMG_1072.PNG */,
+				75E832BC1F1714C800F53588 /* sj_20160705_1.JPG */,
+				75E832CE1F1722BD00F53588 /* Category */,
+				75E832C61F1720C400F53588 /* Class */,
+				75E832A11F17128F00F53588 /* Util */,
+				75E8328D1F17125A00F53588 /* AppDelegate.h */,
+				75E8328E1F17125A00F53588 /* AppDelegate.m */,
+				75E832931F17125A00F53588 /* Main.storyboard */,
+				75E832961F17125A00F53588 /* Assets.xcassets */,
+				75E832981F17125A00F53588 /* LaunchScreen.storyboard */,
+				75E8329B1F17125A00F53588 /* Info.plist */,
+				75E8328A1F17125A00F53588 /* Supporting Files */,
+				75E832C31F171EBC00F53588 /* RootViewController.h */,
+				75E832C41F171EBC00F53588 /* RootViewController.m */,
+			);
+			path = Opengles3D;
+			sourceTree = "<group>";
+		};
+		75E8328A1F17125A00F53588 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				75E8328B1F17125A00F53588 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		75E832A11F17128F00F53588 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				75CBAAB51F2875B9001E569C /* GLUtil.c */,
+				75CBAAB61F2875B9001E569C /* GLUtil.h */,
+				75E832A21F17128F00F53588 /* esTransform.c */,
+				75E832A31F17128F00F53588 /* esUtil.c */,
+				75E832A41F17128F00F53588 /* esUtil.h */,
+				75E832A51F17128F00F53588 /* esUtil_win.h */,
+				75E832A61F17128F00F53588 /* FileWrapper.h */,
+				75E832A71F17128F00F53588 /* FileWrapper.m */,
+				75E832A81F17128F00F53588 /* shader.frag */,
+				75E832A91F17128F00F53588 /* shader.vs */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		75E832B21F17144D00F53588 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				757B885D1F21C8D6006A79DB /* CoreMedia.framework */,
+				757B885B1F21C78B006A79DB /* AVFoundation.framework */,
+				75140CC11F1C60B1007DEC1B /* libc.tbd */,
+				75E832B91F17148300F53588 /* OpenGLES.framework */,
+				75E832B71F17147D00F53588 /* GLKit.framework */,
+				75E832B51F17145400F53588 /* libstdc++.6.0.9.tbd */,
+				75E832B31F17144D00F53588 /* libc++.1.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75E832C61F1720C400F53588 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				75D9B4AE1F2597B50098E816 /* Algorithm */,
+				75D9B4AF1F2597B50098E816 /* Demo */,
+				757B88481F21970F006A79DB /* Filter */,
+				75E832E01F174D0E00F53588 /* ToolClass */,
+				75E832DC1F174B5000F53588 /* base */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		75E832CE1F1722BD00F53588 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				75E832CF1F1722D300F53588 /* NSArray+Safe.h */,
+				75E832D01F1722D300F53588 /* NSArray+Safe.m */,
+				75E832D21F17478A00F53588 /* UIViewController+Safe.h */,
+				75E832D31F17478A00F53588 /* UIViewController+Safe.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		75E832DC1F174B5000F53588 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				75E832DD1F174B7700F53588 /* BaseGLKViewController.h */,
+				75E832DE1F174B7700F53588 /* BaseGLKViewController.m */,
+				75E832E41F174EEC00F53588 /* OpenglesBase.cpp */,
+				75E832E51F174EEC00F53588 /* OpenglesBase.hpp */,
+				75F827AE1F18A1EB001C219E /* demo_data.h */,
+				75CBAAC41F287A7D001E569C /* new_opengles_base.cpp */,
+				75CBAAC51F287A7D001E569C /* new_opengles_base.hpp */,
+				75CBAAC71F288482001E569C /* OpenGLESView.h */,
+				75CBAAC81F288482001E569C /* OpenGLESView.m */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		75E832E01F174D0E00F53588 /* ToolClass */ = {
+			isa = PBXGroup;
+			children = (
+				75E832E11F174D2900F53588 /* OpenglesTool.h */,
+				75E832E21F174D2900F53588 /* OpenglesTool.m */,
+			);
+			path = ToolClass;
+			sourceTree = "<group>";
+		};
+		75F9BB161F2732EC00BAFF9F /* gpuimageTest */ = {
+			isa = PBXGroup;
+			children = (
+				75F9BB171F27330A00BAFF9F /* GPUImageController.h */,
+				75F9BB181F27330A00BAFF9F /* GPUImageController.m */,
+			);
+			path = gpuimageTest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		75E832861F17125A00F53588 /* Opengles3D */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75E8329E1F17125A00F53588 /* Build configuration list for PBXNativeTarget "Opengles3D" */;
+			buildPhases = (
+				75E832831F17125A00F53588 /* Sources */,
+				75E832841F17125A00F53588 /* Frameworks */,
+				75E832851F17125A00F53588 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Opengles3D;
+			productName = Opengles3D;
+			productReference = 75E832871F17125A00F53588 /* Opengles3D.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		75E8327F1F17125A00F53588 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = XunLei;
+				TargetAttributes = {
+					75E832861F17125A00F53588 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 8DP569Z9AD;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 75E832821F17125A00F53588 /* Build configuration list for PBXProject "Opengles3D" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 75E8327E1F17125A00F53588;
+			productRefGroup = 75E832881F17125A00F53588 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				75E832861F17125A00F53588 /* Opengles3D */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		75E832851F17125A00F53588 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75E832AD1F17128F00F53588 /* shader.frag in Resources */,
+				75C78C071F260B18007D76FD /* color_shake_shader3.frag in Resources */,
+				751A98071F23629E008829A7 /* one_texture_shader2.frag in Resources */,
+				756EBB361F284CEE00C2B479 /* frame_buffer_shader2.frag in Resources */,
+				75D9B4AD1F258C5A0098E816 /* one_texture_shader3.vs in Resources */,
+				75C78C081F260B18007D76FD /* color_shake_shader3.vs in Resources */,
+				757B88531F219EE5006A79DB /* IMG_1805.PNG in Resources */,
+				75D9B4D31F2597B50098E816 /* 3d_demo1_shader.vs in Resources */,
+				75D1B2331F26EB4B00609457 /* blur_shader2.frag in Resources */,
+				75140DA51F1CDB74007DEC1B /* 12345.png in Resources */,
+				75E832BE1F1714C800F53588 /* sj_20160705_1.JPG in Resources */,
+				753B6FFB1F223629009F8FFE /* scale_filter_shader.vs in Resources */,
+				75E832BD1F1714C800F53588 /* IMG_1072.PNG in Resources */,
+				75D1B2381F27068100609457 /* blur_shader3.vs in Resources */,
+				75D9B5001F25A5F40098E816 /* filter_blur_shader.frag in Resources */,
+				75D9B4EA1F25998E0098E816 /* edge_detection_shader.frag in Resources */,
+				75CBAAD61F2887AA001E569C /* double_sample_shader.vs in Resources */,
+				757B88511F219A45006A79DB /* sj_20160705_2.JPG in Resources */,
+				75E832AE1F17128F00F53588 /* shader.vs in Resources */,
+				75D1B2371F27068100609457 /* blur_shader3.frag in Resources */,
+				75D9B5081F25EE430098E816 /* sobel_edge_shader.frag in Resources */,
+				75D1B2341F26EB4B00609457 /* blur_shader2.vs in Resources */,
+				75D9B4D21F2597B50098E816 /* 3d_demo1_shader.frag in Resources */,
+				75CBAABC1F287630001E569C /* vert.glsl in Resources */,
+				753B6FFC1F223629009F8FFE /* scale_filter_shader.frag in Resources */,
+				75CBAABB1F287630001E569C /* frag.glsl in Resources */,
+				75E8329A1F17125A00F53588 /* LaunchScreen.storyboard in Resources */,
+				75C78C0F1F263A82007D76FD /* sj_20160705_2_05.jpg in Resources */,
+				75C78C101F263A82007D76FD /* sj_20160705_2_025.jpg in Resources */,
+				75D9B5011F25A5F40098E816 /* filter_blur_shader.vs in Resources */,
+				75AD854A1F23385000047E84 /* one_texture_shader.vs in Resources */,
+				75C78C0B1F263322007D76FD /* one_texture_shader4.frag in Resources */,
+				75CBAAD51F2887AA001E569C /* double_sample_shader_mosaic.frag in Resources */,
+				753B6FF31F222350009F8FFE /* xl_blend_shader.frag in Resources */,
+				75C78C0C1F263322007D76FD /* one_texture_shader4.vs in Resources */,
+				75D9B4F61F259AB60098E816 /* color_shake_shader.vs in Resources */,
+				75D9B4D61F2597B50098E816 /* demo2shader.frag in Resources */,
+				756EBB351F284CEE00C2B479 /* frame_buffer_shader.vs in Resources */,
+				75C78C041F260959007D76FD /* ID_44.bmp in Resources */,
+				753B6FF41F222350009F8FFE /* xl_blend_shader.vs in Resources */,
+				75E832971F17125A00F53588 /* Assets.xcassets in Resources */,
+				75D9B4EB1F25998E0098E816 /* edge_detection_shader.vs in Resources */,
+				75CBAAD41F2887AA001E569C /* double_sample_shader_bw.frag in Resources */,
+				756EBB341F284CEE00C2B479 /* frame_buffer_shader.frag in Resources */,
+				75E832951F17125A00F53588 /* Main.storyboard in Resources */,
+				75D9B4D71F2597B50098E816 /* demo2shader.vs in Resources */,
+				75C78C021F2608D1007D76FD /* color_shke_shader2.frag in Resources */,
+				75D9B5091F25EE430098E816 /* sobel_edge_shader.vs in Resources */,
+				75D9B4F51F259AB60098E816 /* color_shake_shader.frag in Resources */,
+				756EBB371F284CEE00C2B479 /* frame_buffer_shader2.vs in Resources */,
+				75AD85491F23385000047E84 /* one_texture_shader.frag in Resources */,
+				75D9B4AC1F258C5A0098E816 /* one_texture_shader3.frag in Resources */,
+				75C78C011F2608D1007D76FD /* color_shake_shader2.vs in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		75E832831F17125A00F53588 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75D9B4EF1F259A690098E816 /* ColorShakeController.mm in Sources */,
+				75E832D11F1722D300F53588 /* NSArray+Safe.m in Sources */,
+				75CBAABF1F287760001E569C /* framebuffer.cpp in Sources */,
+				75D9B4D81F2597B50098E816 /* Demo2ViewController.mm in Sources */,
+				757B884C1F219724006A79DB /* Filter1Controller.mm in Sources */,
+				75CBAAD91F2887C6001E569C /* double_sample.cpp in Sources */,
+				75E832E61F174EEC00F53588 /* OpenglesBase.cpp in Sources */,
+				752D39211F2895AE001859FF /* GaussianBlurView.mm in Sources */,
+				75CBAACD1F2886C8001E569C /* DoubleSampleController.m in Sources */,
+				75D9B4E01F2597B50098E816 /* Demo5ViewController.mm in Sources */,
+				756EBB2C1F284CA100C2B479 /* FrameBufferController.m in Sources */,
+				75D9B4DD1F2597B50098E816 /* demo4_data.cpp in Sources */,
+				757B884F1F219748006A79DB /* filter_demo1.cpp in Sources */,
+				757B88651F21DA48006A79DB /* filter_scale.cpp in Sources */,
+				75D9B4DA1F2597B50098E816 /* demo3_data.cpp in Sources */,
+				75AD85431F23342400047E84 /* OneTextureController.mm in Sources */,
+				75CBAAC91F288482001E569C /* OpenGLESView.m in Sources */,
+				75E8328F1F17125A00F53588 /* AppDelegate.m in Sources */,
+				75E832DF1F174B7700F53588 /* BaseGLKViewController.m in Sources */,
+				75D9B4FD1F25A5730098E816 /* filter_blur.cpp in Sources */,
+				753B6FF01F22226C009F8FFE /* xl_blend.cpp in Sources */,
+				757B885A1F21AA4C006A79DB /* filter_demo2.cpp in Sources */,
+				75D9B50C1F25EEB40098E816 /* sobel_edge.cpp in Sources */,
+				75E832AA1F17128F00F53588 /* esTransform.c in Sources */,
+				75D9B4D51F2597B50098E816 /* 3d_demo2.cpp in Sources */,
+				751491C01F286C0700422917 /* FrameBufferView.mm in Sources */,
+				75E832E31F174D2900F53588 /* OpenglesTool.m in Sources */,
+				75D9B4F21F259A770098E816 /* color_shake.cpp in Sources */,
+				757B88621F21DA3A006A79DB /* FilterScaleController.mm in Sources */,
+				752D39271F289745001859FF /* gaussian_blur.cpp in Sources */,
+				75D9B4E41F2598650098E816 /* EdgeDetectionController.mm in Sources */,
+				75D9B5051F25EE130098E816 /* SobelEdgeController.mm in Sources */,
+				75CBAAD01F2886DB001E569C /* DoubleSampleView.mm in Sources */,
+				75E832C51F171EBC00F53588 /* RootViewController.m in Sources */,
+				75D9B4DF1F2597B50098E816 /* 3d_demo5.cpp in Sources */,
+				75CBAAB71F2875B9001E569C /* GLUtil.c in Sources */,
+				75CBAAC61F287A7D001E569C /* new_opengles_base.cpp in Sources */,
+				757B88571F21AA2C006A79DB /* Filter2Controller.mm in Sources */,
+				75AD85461F23343400047E84 /* one_texture.cpp in Sources */,
+				75E832AC1F17128F00F53588 /* FileWrapper.m in Sources */,
+				75D9B4FA1F25A5240098E816 /* BlurController.mm in Sources */,
+				75D9B4E71F2598820098E816 /* edge_detection.cpp in Sources */,
+				75D9B4DE1F2597B50098E816 /* Demo4ViewController.mm in Sources */,
+				753B6FED1F222253009F8FFE /* BlendController.mm in Sources */,
+				75E832D41F17478A00F53588 /* UIViewController+Safe.m in Sources */,
+				75D9B4DC1F2597B50098E816 /* 3d_demo4.cpp in Sources */,
+				75F9BB191F27330A00BAFF9F /* GPUImageController.m in Sources */,
+				75E8328C1F17125A00F53588 /* main.m in Sources */,
+				752D39241F2895C2001859FF /* GaussianBlurController.m in Sources */,
+				75D9B4D11F2597B50098E816 /* 3d_demo1.cpp in Sources */,
+				75D9B4D41F2597B50098E816 /* ViewController.mm in Sources */,
+				75D9B4D91F2597B50098E816 /* 3d_demo3.cpp in Sources */,
+				75D9B4DB1F2597B50098E816 /* Demo3ViewController.mm in Sources */,
+				75E832AB1F17128F00F53588 /* esUtil.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		75E832931F17125A00F53588 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75E832941F17125A00F53588 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		75E832981F17125A00F53588 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75E832991F17125A00F53588 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		75E8329C1F17125A00F53588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		75E8329D1F17125A00F53588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		75E8329F1F17125A00F53588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8DP569Z9AD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Opengles3D/Lib",
+				);
+				INFOPLIST_FILE = Opengles3D/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = XL.Opengles3D;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		75E832A01F17125A00F53588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8DP569Z9AD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Opengles3D/Lib",
+				);
+				INFOPLIST_FILE = Opengles3D/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = XL.Opengles3D;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		75E832821F17125A00F53588 /* Build configuration list for PBXProject "Opengles3D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75E8329C1F17125A00F53588 /* Debug */,
+				75E8329D1F17125A00F53588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		75E8329E1F17125A00F53588 /* Build configuration list for PBXNativeTarget "Opengles3D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75E8329F1F17125A00F53588 /* Debug */,
+				75E832A01F17125A00F53588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 75E8327F1F17125A00F53588 /* Project object */;
+}
