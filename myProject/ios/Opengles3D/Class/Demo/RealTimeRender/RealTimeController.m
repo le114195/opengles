@@ -1,45 +1,55 @@
 //
-//  Filter2Controller.m
+//  RealTimeController.m
 //  Opengles3D
 //
-//  Created by 勒俊 on 2017/7/21.
+//  Created by 勒俊 on 2017/7/27.
 //  Copyright © 2017年 XunLei. All rights reserved.
 //
 
-#import "Filter2Controller.h"
-#import "filter_demo2.hpp"
+#import "RealTimeController.h"
+#import "RealTimeView.h"
 #import "OpenglesTool.h"
 #import <AVFoundation/AVFoundation.h>
 
+@interface RealTimeController ()<AVCaptureVideoDataOutputSampleBufferDelegate>
 
-@interface Filter2Controller ()<AVCaptureVideoDataOutputSampleBufferDelegate>
+@property (nonatomic, assign) BOOL          isFirst;
 
-@property (nonatomic, assign) CGFloat           time;
+@property (nonatomic, strong) RealTimeView  *realView;
 
 @end
 
-@implementation Filter2Controller
-{
-    CGFloat bufferWidth;
-    CGFloat bufferHeight;
-    
-    unsigned char *buffer;
-}
+@implementation RealTimeController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
     
-    [self setupGL];
+    self.isFirst = YES;
+    
+    self.realView = [[RealTimeView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:_realView];
     
     [self setupCaptureSession];
+
     
-    // Do any additional setup after loading the view.
+    UIImage *image = [UIImage imageNamed:@"sj_20160705_2.JPG"];
+    
+    void *buffer = [OpenglesTool getBuffer:image];
+    
+    [self.realView needRend:buffer width:(int)image.size.width height:(int)image.size.height];
+
+    
+    free(buffer);
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 - (void)setupCaptureSession
 {
@@ -104,69 +114,25 @@
     [connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
     [connection setVideoMirrored:YES];
     
+    if (self.isFirst) {
+        self.isFirst = NO;
+        return;
+    }
+    
     CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CVPixelBufferLockBaseAddress( pixelBuffer, 0);
     
-    bufferWidth = CVPixelBufferGetWidth(pixelBuffer);
-    bufferHeight = CVPixelBufferGetHeight(pixelBuffer);
+    size_t bufferWidth = CVPixelBufferGetWidth(pixelBuffer);
+    size_t bufferHeight = CVPixelBufferGetHeight(pixelBuffer);
     
     unsigned char * pixel = (unsigned char *)CVPixelBufferGetBaseAddress(pixelBuffer);
     CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
+
     
-    
-    buffer = pixel;
+    [self.realView needRend:pixel width:(int)bufferWidth height:(int)bufferHeight];
 }
 
 
-
-
-- (void)setupGL
-{
-    [EAGLContext setCurrentContext:self.context];
-    
-    memset( &_esContext, 0, sizeof( _esContext ) );
-    
-    
-    _esContext.userData = malloc(sizeof(FILTER_DEMO2::UserData));
-    
-    FILTER_DEMO2::UserData *userData = (FILTER_DEMO2::UserData *)_esContext.userData;
-    
-    UIImage *image = [UIImage imageNamed:@"sj_20160705_2.JPG"];
-    
-    userData->buffer1 = (char *)[OpenglesTool getBuffer:image];
-    userData->buffer1_width = image.size.width;
-    userData->buffer1_height = image.size.height;
-    
-    FILTER_DEMO2 demo;
-    demo.esMain(&_esContext);
-}
-
-
-
-- (void)update
-{
-    if ( _esContext.updateFunc )
-    {
-        FILTER_DEMO2::UserData *userData = (FILTER_DEMO2::UserData *)_esContext.userData;
-        
-        userData->buffer1 = (char *)buffer;
-        userData->buffer1_width = bufferWidth;
-        userData->buffer1_height = bufferHeight;
-        
-        _esContext.updateFunc( &_esContext, self.timeSinceLastUpdate );
-    }
-}
-
-- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
-{
-    _esContext.width = (GLint)view.drawableWidth;
-    _esContext.height = (GLint)view.drawableHeight;
-    
-    if ( _esContext.drawFunc )
-    {
-        _esContext.drawFunc( &_esContext );
-    }
-}
 
 
 @end
