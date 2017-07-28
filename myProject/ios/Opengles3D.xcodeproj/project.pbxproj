@@ -13,6 +13,15 @@
 		752D39211F2895AE001859FF /* GaussianBlurView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 752D39201F2895AE001859FF /* GaussianBlurView.mm */; };
 		752D39241F2895C2001859FF /* GaussianBlurController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752D39231F2895C2001859FF /* GaussianBlurController.m */; };
 		752D39271F289745001859FF /* gaussian_blur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 752D39251F289745001859FF /* gaussian_blur.cpp */; };
+		753B04641F29844C0067B322 /* MultipleSampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B04631F29844C0067B322 /* MultipleSampleController.m */; };
+		753B04671F2984640067B322 /* MultipleSampleView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 753B04661F2984640067B322 /* MultipleSampleView.mm */; };
+		753B046A1F29847B0067B322 /* multiple_sample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 753B04681F29847B0067B322 /* multiple_sample.cpp */; };
+		753B046C1F2988C10067B322 /* multiple_sample_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 753B046B1F2988C10067B322 /* multiple_sample_shader.frag */; };
+		753B04711F29E2E00067B322 /* RealTimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B04701F29E2E00067B322 /* RealTimeController.m */; };
+		753B04741F29E2EE0067B322 /* real_time_render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 753B04721F29E2EE0067B322 /* real_time_render.cpp */; };
+		753B04771F29E3080067B322 /* RealTimeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 753B04761F29E3080067B322 /* RealTimeView.mm */; };
+		753B047A1F29E3320067B322 /* real_time_render.frag in Resources */ = {isa = PBXBuildFile; fileRef = 753B04781F29E3320067B322 /* real_time_render.frag */; };
+		753B047B1F29E3320067B322 /* real_time_render.vs in Resources */ = {isa = PBXBuildFile; fileRef = 753B04791F29E3320067B322 /* real_time_render.vs */; };
 		753B6FED1F222253009F8FFE /* BlendController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 753B6FEC1F222253009F8FFE /* BlendController.mm */; };
 		753B6FF01F22226C009F8FFE /* xl_blend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 753B6FEE1F22226C009F8FFE /* xl_blend.cpp */; };
 		753B6FF31F222350009F8FFE /* xl_blend_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 753B6FF11F222350009F8FFE /* xl_blend_shader.frag */; };
@@ -307,6 +316,21 @@
 		752D39231F2895C2001859FF /* GaussianBlurController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaussianBlurController.m; sourceTree = "<group>"; };
 		752D39251F289745001859FF /* gaussian_blur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gaussian_blur.cpp; sourceTree = "<group>"; };
 		752D39261F289745001859FF /* gaussian_blur.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gaussian_blur.hpp; sourceTree = "<group>"; };
+		753B04621F29844C0067B322 /* MultipleSampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleSampleController.h; sourceTree = "<group>"; };
+		753B04631F29844C0067B322 /* MultipleSampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleSampleController.m; sourceTree = "<group>"; };
+		753B04651F2984640067B322 /* MultipleSampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleSampleView.h; sourceTree = "<group>"; };
+		753B04661F2984640067B322 /* MultipleSampleView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MultipleSampleView.mm; sourceTree = "<group>"; };
+		753B04681F29847B0067B322 /* multiple_sample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = multiple_sample.cpp; sourceTree = "<group>"; };
+		753B04691F29847B0067B322 /* multiple_sample.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = multiple_sample.hpp; sourceTree = "<group>"; };
+		753B046B1F2988C10067B322 /* multiple_sample_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = multiple_sample_shader.frag; sourceTree = "<group>"; };
+		753B046F1F29E2E00067B322 /* RealTimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealTimeController.h; sourceTree = "<group>"; };
+		753B04701F29E2E00067B322 /* RealTimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealTimeController.m; sourceTree = "<group>"; };
+		753B04721F29E2EE0067B322 /* real_time_render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = real_time_render.cpp; sourceTree = "<group>"; };
+		753B04731F29E2EE0067B322 /* real_time_render.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = real_time_render.hpp; sourceTree = "<group>"; };
+		753B04751F29E3080067B322 /* RealTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealTimeView.h; sourceTree = "<group>"; };
+		753B04761F29E3080067B322 /* RealTimeView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RealTimeView.mm; sourceTree = "<group>"; };
+		753B04781F29E3320067B322 /* real_time_render.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = real_time_render.frag; sourceTree = "<group>"; };
+		753B04791F29E3320067B322 /* real_time_render.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = real_time_render.vs; sourceTree = "<group>"; };
 		753B6FEB1F222253009F8FFE /* BlendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlendController.h; sourceTree = "<group>"; };
 		753B6FEC1F222253009F8FFE /* BlendController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BlendController.mm; sourceTree = "<group>"; };
 		753B6FEE1F22226C009F8FFE /* xl_blend.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xl_blend.cpp; sourceTree = "<group>"; };
@@ -851,6 +875,35 @@
 			path = GaussianBlur;
 			sourceTree = "<group>";
 		};
+		753B04611F2984350067B322 /* MultipleSample */ = {
+			isa = PBXGroup;
+			children = (
+				753B046B1F2988C10067B322 /* multiple_sample_shader.frag */,
+				753B04621F29844C0067B322 /* MultipleSampleController.h */,
+				753B04631F29844C0067B322 /* MultipleSampleController.m */,
+				753B04651F2984640067B322 /* MultipleSampleView.h */,
+				753B04661F2984640067B322 /* MultipleSampleView.mm */,
+				753B04681F29847B0067B322 /* multiple_sample.cpp */,
+				753B04691F29847B0067B322 /* multiple_sample.hpp */,
+			);
+			path = MultipleSample;
+			sourceTree = "<group>";
+		};
+		753B046E1F29E2B90067B322 /* RealTimeRender */ = {
+			isa = PBXGroup;
+			children = (
+				753B04781F29E3320067B322 /* real_time_render.frag */,
+				753B04791F29E3320067B322 /* real_time_render.vs */,
+				753B046F1F29E2E00067B322 /* RealTimeController.h */,
+				753B04701F29E2E00067B322 /* RealTimeController.m */,
+				753B04721F29E2EE0067B322 /* real_time_render.cpp */,
+				753B04731F29E2EE0067B322 /* real_time_render.hpp */,
+				753B04751F29E3080067B322 /* RealTimeView.h */,
+				753B04761F29E3080067B322 /* RealTimeView.mm */,
+			);
+			path = RealTimeRender;
+			sourceTree = "<group>";
+		};
 		753B6FEA1F222243009F8FFE /* Blend */ = {
 			isa = PBXGroup;
 			children = (
@@ -987,6 +1040,8 @@
 		75D9B4AF1F2597B50098E816 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				753B046E1F29E2B90067B322 /* RealTimeRender */,
+				753B04611F2984350067B322 /* MultipleSample */,
 				75CBAACA1F2886A1001E569C /* DoubleSample */,
 				756EBB291F284C8B00C2B479 /* framebuffer */,
 				75F9BB161F2732EC00BAFF9F /* gpuimageTest */,
@@ -1725,6 +1780,7 @@
 				75D1B2371F27068100609457 /* blur_shader3.frag in Resources */,
 				75D9B5081F25EE430098E816 /* sobel_edge_shader.frag in Resources */,
 				75D1B2341F26EB4B00609457 /* blur_shader2.vs in Resources */,
+				753B046C1F2988C10067B322 /* multiple_sample_shader.frag in Resources */,
 				75DD09691F28B7D40032B94D /* Info.plist in Resources */,
 				75DD08041F28B7720032B94D /* sj_20160705_2_025.jpg in Resources */,
 				75D9B4D21F2597B50098E816 /* 3d_demo1_shader.frag in Resources */,
@@ -1748,9 +1804,11 @@
 				75CBAAD41F2887AA001E569C /* double_sample_shader_bw.frag in Resources */,
 				75DD08001F28B7720032B94D /* IMG_1072.PNG in Resources */,
 				756EBB341F284CEE00C2B479 /* frame_buffer_shader.frag in Resources */,
+				753B047A1F29E3320067B322 /* real_time_render.frag in Resources */,
 				75E832951F17125A00F53588 /* Main.storyboard in Resources */,
 				75D9B4D71F2597B50098E816 /* demo2shader.vs in Resources */,
 				75C78C021F2608D1007D76FD /* color_shke_shader2.frag in Resources */,
+				753B047B1F29E3320067B322 /* real_time_render.vs in Resources */,
 				75DD08031F28B7720032B94D /* sj_20160705_2.JPG in Resources */,
 				75DD08021F28B7720032B94D /* sj_20160705_1.JPG in Resources */,
 				75D9B5091F25EE430098E816 /* sobel_edge_shader.vs in Resources */,
@@ -1815,6 +1873,7 @@
 				75DD09BC1F28B7D40032B94D /* GPUImageLineGenerator.m in Sources */,
 				75DD09841F28B7D40032B94D /* GPUImageColorPackingFilter.m in Sources */,
 				75DD09FB1F28B7D40032B94D /* GPUImageStretchDistortionFilter.m in Sources */,
+				753B04741F29E2EE0067B322 /* real_time_render.cpp in Sources */,
 				75DD09BF1F28B7D40032B94D /* GPUImageLowPassFilter.m in Sources */,
 				75DD09721F28B7D40032B94D /* GPUImageAverageLuminanceThresholdFilter.m in Sources */,
 				75DD09821F28B7D40032B94D /* GPUImageColorLocalBinaryPatternFilter.m in Sources */,
@@ -1902,6 +1961,7 @@
 				75DD09921F28B7D40032B94D /* GPUImageDivideBlendFilter.m in Sources */,
 				75DD09B91F28B7D40032B94D /* GPUImageLevelsFilter.m in Sources */,
 				75DD09B61F28B7D40032B94D /* GPUImageKuwaharaRadius3Filter.m in Sources */,
+				753B046A1F29847B0067B322 /* multiple_sample.cpp in Sources */,
 				75DD0A141F28B7D40032B94D /* GPUImageWhiteBalanceFilter.m in Sources */,
 				75DD09EB1F28B7D40032B94D /* GPUImageScreenBlendFilter.m in Sources */,
 				75DD09911F28B7D40032B94D /* GPUImageDissolveBlendFilter.m in Sources */,
@@ -1911,6 +1971,8 @@
 				75DD09C11F28B7D40032B94D /* GPUImageLuminanceThresholdFilter.m in Sources */,
 				75DD09AD1F28B7D40032B94D /* GPUImageHistogramFilter.m in Sources */,
 				75DD09851F28B7D40032B94D /* GPUImageColourFASTFeatureDetector.m in Sources */,
+				753B04671F2984640067B322 /* MultipleSampleView.mm in Sources */,
+				753B04711F29E2E00067B322 /* RealTimeController.m in Sources */,
 				75DD0A021F28B7D40032B94D /* GPUImageThresholdedNonMaximumSuppressionFilter.m in Sources */,
 				75DD09B41F28B7D40032B94D /* GPUImageJFAVoronoiFilter.m in Sources */,
 				752D39271F289745001859FF /* gaussian_blur.cpp in Sources */,
@@ -1920,6 +1982,7 @@
 				75D9B5051F25EE130098E816 /* SobelEdgeController.mm in Sources */,
 				75DD09A11F28B7D40032B94D /* GPUImageGaussianBlurPositionFilter.m in Sources */,
 				75CBAAD01F2886DB001E569C /* DoubleSampleView.mm in Sources */,
+				753B04641F29844C0067B322 /* MultipleSampleController.m in Sources */,
 				75DD09741F28B7D40032B94D /* GPUImageBoxBlurFilter.m in Sources */,
 				75DD096E1F28B7D40032B94D /* GPUImageAddBlendFilter.m in Sources */,
 				75DD09DC1F28B7D40032B94D /* GPUImagePixellatePositionFilter.m in Sources */,
@@ -1931,6 +1994,7 @@
 				75DD09D11F28B7D40032B94D /* GPUImageNormalBlendFilter.m in Sources */,
 				75DD09A31F28B7D40032B94D /* GPUImageGlassSphereFilter.m in Sources */,
 				75DD09F11F28B7D40032B94D /* GPUImageSkinToneFilter.m in Sources */,
+				753B04771F29E3080067B322 /* RealTimeView.mm in Sources */,
 				75DD09F01F28B7D40032B94D /* GPUImageSketchFilter.m in Sources */,
 				75DD09AE1F28B7D40032B94D /* GPUImageHistogramGenerator.m in Sources */,
 				75D9B4DF1F2597B50098E816 /* 3d_demo5.cpp in Sources */,
