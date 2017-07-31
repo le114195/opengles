@@ -13,13 +13,7 @@ int FILTER_DEMO1::Init ( ESContext *esContext ) {
     
     UserData *userData = (UserData *)esContext->userData;
     
-    char *vShader;
-    char *fShader;
-
-    xl_readFileStr(&vShader, "scale_filter_shader.vs");
-    xl_readFileStr(&fShader, "scale_filter_shader.frag");
-
-    userData->programObject = xl_esLoadProgram(vShader, fShader);
+    userData->programObject = xl_esLoadProgram(userData->vShader, userData->fShader);
     
     userData->baseMapLoc = glGetUniformLocation(userData->programObject, "colorMap");
     

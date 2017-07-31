@@ -16,7 +16,6 @@ void REALTIMERENDER::Init()
 
 void REALTIMERENDER::setTexture(unsigned char *buffer, int width, int height, GLenum format)
 {
-    
     if (textureId == 0) {
         textureId = createTexture2D(format, width, height, buffer);
     }else {

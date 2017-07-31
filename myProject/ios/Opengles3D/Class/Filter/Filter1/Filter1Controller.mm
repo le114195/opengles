@@ -26,9 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self setupGL];
-    
+
     
     // Do any additional setup after loading the view.
 }
@@ -48,6 +46,11 @@
     _esContext.userData = malloc(sizeof(FILTER_DEMO1::UserData));
     
     FILTER_DEMO1::UserData *userData = (FILTER_DEMO1::UserData *)_esContext.userData;
+    
+    
+    userData->vShader = [OpenglesTool readFileData:@"scale_filter_shader.vs"];
+    userData->fShader = [OpenglesTool readFileData:@"scale_filter_shader.frag"];
+    
     
     UIImage *image = [UIImage imageNamed:@"sj_20160705_2.JPG"];
     

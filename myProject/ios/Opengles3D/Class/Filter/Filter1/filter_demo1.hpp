@@ -40,6 +40,8 @@ public:
         // Sampler locations
         GLint baseMapLoc;
         
+        const char* vShader;
+        const char* fShader;
         
         
         // Texture handle

@@ -10,6 +10,8 @@
 #import "filter_demo2.hpp"
 #import "OpenglesTool.h"
 #import <AVFoundation/AVFoundation.h>
+#import <opencv2/opencv.hpp>
+#import <opencv2/imgcodecs/ios.h>
 
 
 @interface Filter2Controller ()<AVCaptureVideoDataOutputSampleBufferDelegate>
@@ -112,7 +114,6 @@
     
     unsigned char * pixel = (unsigned char *)CVPixelBufferGetBaseAddress(pixelBuffer);
     CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
-    
     
     buffer = pixel;
 }

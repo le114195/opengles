@@ -41,6 +41,8 @@
 		757B885E1F21C8D6006A79DB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757B885D1F21C8D6006A79DB /* CoreMedia.framework */; };
 		757B88621F21DA3A006A79DB /* FilterScaleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 757B88611F21DA3A006A79DB /* FilterScaleController.mm */; };
 		757B88651F21DA48006A79DB /* filter_scale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 757B88631F21DA48006A79DB /* filter_scale.cpp */; };
+		75903D261F2B60750039A64C /* libyuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75903D251F2B60750039A64C /* libyuv.a */; };
+		75903D291F2B60CD0039A64C /* GLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 75903D281F2B60CD0039A64C /* GLTexture.m */; };
 		75AD85431F23342400047E84 /* OneTextureController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75AD85421F23342400047E84 /* OneTextureController.mm */; };
 		75AD85461F23343400047E84 /* one_texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75AD85441F23343400047E84 /* one_texture.cpp */; };
 		75AD85491F23385000047E84 /* one_texture_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75AD85471F23385000047E84 /* one_texture_shader.frag */; };
@@ -307,6 +309,7 @@
 
 /* Begin PBXFileReference section */
 		75140CC11F1C60B1007DEC1B /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
+		75141CB71F2C6F32008CCA1B /* OpencvHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpencvHeader.h; sourceTree = "<group>"; };
 		751491BE1F286C0700422917 /* FrameBufferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameBufferView.h; sourceTree = "<group>"; };
 		751491BF1F286C0700422917 /* FrameBufferView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FrameBufferView.mm; sourceTree = "<group>"; };
 		751A98061F23629E008829A7 /* one_texture_shader2.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = one_texture_shader2.frag; sourceTree = "<group>"; };
@@ -359,6 +362,28 @@
 		757B88611F21DA3A006A79DB /* FilterScaleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FilterScaleController.mm; sourceTree = "<group>"; };
 		757B88631F21DA48006A79DB /* filter_scale.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = filter_scale.cpp; sourceTree = "<group>"; };
 		757B88641F21DA48006A79DB /* filter_scale.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = filter_scale.hpp; sourceTree = "<group>"; };
+		75903D111F2B60750039A64C /* basic_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basic_types.h; sourceTree = "<group>"; };
+		75903D121F2B60750039A64C /* compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compare.h; sourceTree = "<group>"; };
+		75903D131F2B60750039A64C /* convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert.h; sourceTree = "<group>"; };
+		75903D141F2B60750039A64C /* convert_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert_argb.h; sourceTree = "<group>"; };
+		75903D151F2B60750039A64C /* convert_from.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert_from.h; sourceTree = "<group>"; };
+		75903D161F2B60750039A64C /* convert_from_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert_from_argb.h; sourceTree = "<group>"; };
+		75903D171F2B60750039A64C /* cpu_id.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpu_id.h; sourceTree = "<group>"; };
+		75903D181F2B60750039A64C /* format_conversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = format_conversion.h; sourceTree = "<group>"; };
+		75903D191F2B60750039A64C /* mjpeg_decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mjpeg_decoder.h; sourceTree = "<group>"; };
+		75903D1A1F2B60750039A64C /* planar_functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = planar_functions.h; sourceTree = "<group>"; };
+		75903D1B1F2B60750039A64C /* rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rotate.h; sourceTree = "<group>"; };
+		75903D1C1F2B60750039A64C /* rotate_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rotate_argb.h; sourceTree = "<group>"; };
+		75903D1D1F2B60750039A64C /* row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = row.h; sourceTree = "<group>"; };
+		75903D1E1F2B60750039A64C /* scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale.h; sourceTree = "<group>"; };
+		75903D1F1F2B60750039A64C /* scale_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale_argb.h; sourceTree = "<group>"; };
+		75903D201F2B60750039A64C /* scale_row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale_row.h; sourceTree = "<group>"; };
+		75903D211F2B60750039A64C /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		75903D221F2B60750039A64C /* video_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_common.h; sourceTree = "<group>"; };
+		75903D231F2B60750039A64C /* libyuv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libyuv.h; sourceTree = "<group>"; };
+		75903D251F2B60750039A64C /* libyuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libyuv.a; sourceTree = "<group>"; };
+		75903D271F2B60CD0039A64C /* GLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLTexture.h; sourceTree = "<group>"; };
+		75903D281F2B60CD0039A64C /* GLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLTexture.m; sourceTree = "<group>"; };
 		75AD85411F23342400047E84 /* OneTextureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneTextureController.h; sourceTree = "<group>"; };
 		75AD85421F23342400047E84 /* OneTextureController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OneTextureController.mm; sourceTree = "<group>"; };
 		75AD85441F23343400047E84 /* one_texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = one_texture.cpp; sourceTree = "<group>"; };
@@ -856,12 +881,21 @@
 				75140CC21F1C60B1007DEC1B /* libc.tbd in Frameworks */,
 				75E832BA1F17148300F53588 /* OpenGLES.framework in Frameworks */,
 				75E832B81F17147D00F53588 /* GLKit.framework in Frameworks */,
+				75903D261F2B60750039A64C /* libyuv.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75141CB61F2C6F1C008CCA1B /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				75141CB71F2C6F32008CCA1B /* OpencvHeader.h */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		752D391E1F28957F001859FF /* GaussianBlur */ = {
 			isa = PBXGroup;
 			children = (
@@ -892,6 +926,8 @@
 		753B046E1F29E2B90067B322 /* RealTimeRender */ = {
 			isa = PBXGroup;
 			children = (
+				75903D271F2B60CD0039A64C /* GLTexture.h */,
+				75903D281F2B60CD0039A64C /* GLTexture.m */,
 				753B04781F29E3320067B322 /* real_time_render.frag */,
 				753B04791F29E3320067B322 /* real_time_render.vs */,
 				753B046F1F29E2E00067B322 /* RealTimeController.h */,
@@ -981,6 +1017,57 @@
 				757B88641F21DA48006A79DB /* filter_scale.hpp */,
 			);
 			path = FilterScale;
+			sourceTree = "<group>";
+		};
+		75903D0E1F2B60750039A64C /* libyuv */ = {
+			isa = PBXGroup;
+			children = (
+				75903D0F1F2B60750039A64C /* include */,
+				75903D241F2B60750039A64C /* lib */,
+			);
+			path = libyuv;
+			sourceTree = "<group>";
+		};
+		75903D0F1F2B60750039A64C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				75903D101F2B60750039A64C /* libyuv */,
+				75903D231F2B60750039A64C /* libyuv.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		75903D101F2B60750039A64C /* libyuv */ = {
+			isa = PBXGroup;
+			children = (
+				75903D111F2B60750039A64C /* basic_types.h */,
+				75903D121F2B60750039A64C /* compare.h */,
+				75903D131F2B60750039A64C /* convert.h */,
+				75903D141F2B60750039A64C /* convert_argb.h */,
+				75903D151F2B60750039A64C /* convert_from.h */,
+				75903D161F2B60750039A64C /* convert_from_argb.h */,
+				75903D171F2B60750039A64C /* cpu_id.h */,
+				75903D181F2B60750039A64C /* format_conversion.h */,
+				75903D191F2B60750039A64C /* mjpeg_decoder.h */,
+				75903D1A1F2B60750039A64C /* planar_functions.h */,
+				75903D1B1F2B60750039A64C /* rotate.h */,
+				75903D1C1F2B60750039A64C /* rotate_argb.h */,
+				75903D1D1F2B60750039A64C /* row.h */,
+				75903D1E1F2B60750039A64C /* scale.h */,
+				75903D1F1F2B60750039A64C /* scale_argb.h */,
+				75903D201F2B60750039A64C /* scale_row.h */,
+				75903D211F2B60750039A64C /* version.h */,
+				75903D221F2B60750039A64C /* video_common.h */,
+			);
+			path = libyuv;
+			sourceTree = "<group>";
+		};
+		75903D241F2B60750039A64C /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				75903D251F2B60750039A64C /* libyuv.a */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 		75AD85401F23341200047E84 /* OneTexture */ = {
@@ -1587,6 +1674,7 @@
 		75E832891F17125A00F53588 /* Opengles3D */ = {
 			isa = PBXGroup;
 			children = (
+				75141CB61F2C6F1C008CCA1B /* Header */,
 				75DD08061F28B7D30032B94D /* Lib */,
 				75DD07F51F28B7720032B94D /* resource */,
 				75E832CE1F1722BD00F53588 /* Category */,
@@ -1616,6 +1704,7 @@
 		75E832A11F17128F00F53588 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				75903D0E1F2B60750039A64C /* libyuv */,
 				75CBAAB51F2875B9001E569C /* GLUtil.c */,
 				75CBAAB61F2875B9001E569C /* GLUtil.h */,
 				75E832A21F17128F00F53588 /* esTransform.c */,
@@ -1943,6 +2032,7 @@
 				75E832AA1F17128F00F53588 /* esTransform.c in Sources */,
 				75DD09A21F28B7D40032B94D /* GPUImageGaussianSelectiveBlurFilter.m in Sources */,
 				75DD098D1F28B7D40032B94D /* GPUImageDifferenceBlendFilter.m in Sources */,
+				75903D291F2B60CD0039A64C /* GLTexture.m in Sources */,
 				75DD09D51F28B7D40032B94D /* GPUImageOverlayBlendFilter.m in Sources */,
 				75DD09E21F28B7D40032B94D /* GPUImageRawDataInput.m in Sources */,
 				75D9B4D51F2597B50098E816 /* 3d_demo2.cpp in Sources */,
@@ -2110,6 +2200,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2158,6 +2249,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2180,12 +2272,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8DP569Z9AD;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Opengles3D/Lib",
 				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Opengles3D/Util/libyuv/include";
 				INFOPLIST_FILE = Opengles3D/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Opengles3D/Util/libyuv/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = XL.Opengles3D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -2196,12 +2294,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8DP569Z9AD;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Opengles3D/Lib",
 				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Opengles3D/Util/libyuv/include";
 				INFOPLIST_FILE = Opengles3D/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Opengles3D/Util/libyuv/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = XL.Opengles3D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

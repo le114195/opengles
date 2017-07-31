@@ -9,6 +9,7 @@
 #import "MultipleSampleView.h"
 #import "OpenglesTool.h"
 #include "multiple_sample.hpp"
+#include "OpencvHeader.h"
 
 @implementation MultipleSampleView
 {
@@ -32,9 +33,7 @@
     
     demo.setupFrameAndRenderBuffer();
     demo.setupFrameBuffer2();
-    
-    // 为 color renderbuffer 分配存储空间
-    [_context renderbufferStorage:GL_RENDERBUFFER fromDrawable:_eaglLayer];
+
     
     demo.render();
     
@@ -65,6 +64,29 @@
 
 
 
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+//    glBindFramebuffer(GL_FRAMEBUFFER, demo.frameBuffer);
+    
+    
+    demo.buffer1 = (unsigned char *)malloc(sizeof(unsigned char) * demo.s_width * demo.s_height);
+    
+    NSLog(@"%f", [[NSDate date] timeIntervalSince1970]);
+    
+    glReadPixels(0, 0, demo.s_width, demo.s_height, GL_RGBA, GL_UNSIGNED_BYTE, demo.buffer1);
+    
+    NSLog(@"%f", [[NSDate date] timeIntervalSince1970]);
+    
+    cv::Mat src1;
+    src1.create(demo.s_height, demo.s_width, CV_8UC4);
+    memcpy(src1.data, demo.buffer1, demo.s_height * demo.s_width * 4);
+    UIImage *image1 = MatToUIImage(src1);
+    
+    NSLog(@"%@", NSStringFromCGSize(image1.size));
+    
+    free(demo.buffer1);
+}
 
 
 

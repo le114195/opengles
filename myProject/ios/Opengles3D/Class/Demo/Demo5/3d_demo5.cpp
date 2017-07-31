@@ -101,7 +101,8 @@ void DEMO5::Draw(ESContext *esContext) {
     // Set the viewport
     glViewport ( 0, 0, esContext->width, esContext->height );
     
-    // Clear the color buffer
+    // 开启深度测试，需要清楚深度测试值
+    glClearColor(0.0, 0.0, 0.0, 1.0);
     glClear ( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
     
     // Use the program object

@@ -63,11 +63,11 @@ void MULTIPLE_SAMPLE::render()
     
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
     
-    
     glUseProgram(program2);//马赛克
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer2);
     
     glViewport(0, 0, s_width, s_height);
+    
     
     // Clear the color buffer
     glClearColor(1.0, 1.0, 1.0, 1.0);
@@ -81,9 +81,7 @@ void MULTIPLE_SAMPLE::render()
     
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, textureId2);
-    
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
-    
     
     glUseProgram(program3);//红色通道
     glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);

@@ -21,6 +21,7 @@ public:
     
     void setupFrameBuffer2();
     
+    
 public:
     
     GLuint textureId1;
@@ -35,6 +36,11 @@ public:
     
     GLuint framebuffer1;
     GLuint framebuffer2;
+    
+    unsigned char *buffer1;
+    unsigned char *buffer2;
+    unsigned char *buffer3;
+    
     
 };
 
