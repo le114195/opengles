@@ -52,6 +52,8 @@ int FILTER_DEMO2::Init ( ESContext *esContext ) {
     userData->baseMapLoc = glGetUniformLocation(userData->programObject, "s_baseMap");
     
     userData->tex1Id = LoadTexture(userData->platformData, userData->buffer1, userData->buffer1_width, userData->buffer1_height);
+    userData->texWidth = userData->buffer1_width;
+    userData->texHeight = userData->buffer1_height;
     
     userData->alphaLoc = glGetUniformLocation(userData->programObject, "alpha");
     
@@ -138,9 +140,6 @@ void FILTER_DEMO2::Update ( ESContext *esContext, float deltaTime ) {
         time = 0;
     }
     
-    
-    glDeleteTextures(userData->programObject, &userData->tex1Id);
-    
     static int status = 1;
     
     userData->offset += deltaTime * 0.2 * status;
@@ -152,8 +151,15 @@ void FILTER_DEMO2::Update ( ESContext *esContext, float deltaTime ) {
         status = 1;
     }
     
-    
-    userData->tex1Id = LoadTexture(userData->platformData, userData->buffer1, userData->buffer1_width, userData->buffer1_height);
+    if (userData->texWidth != userData->buffer1_width || userData->texHeight != userData->buffer1_height) {
+        glDeleteTextures(1, &userData->tex1Id);
+        userData->tex1Id = LoadTexture(userData->platformData, userData->buffer1, userData->buffer1_width, userData->buffer1_height);
+        userData->texWidth = userData->buffer1_width;
+        userData->texHeight = userData->buffer1_height;
+    }else {
+        glBindTexture(GL_TEXTURE_2D, userData->tex1Id);
+        glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, userData->buffer1_width, userData->buffer1_height, GL_RGBA, GL_UNSIGNED_BYTE, userData->buffer1);
+    }
 }
 
 ///

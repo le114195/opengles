@@ -25,8 +25,8 @@ public:
 public:
     
     GLuint textureId;
-    
-    
+    int textureWidth = 0;
+    int textureHeight = 0;
 };
 
 

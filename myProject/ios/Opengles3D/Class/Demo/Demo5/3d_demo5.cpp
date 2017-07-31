@@ -254,5 +254,3 @@ int demo5_data1(GLfloat **vertices, GLuint **indices, GLfloat **colors) {
 
 
 
-
-

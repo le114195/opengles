@@ -48,6 +48,8 @@ public:
         
         // Texture handle
         GLuint tex1Id;
+        int texWidth;
+        int texHeight;
         
         char *buffer1;
         int buffer1_width;

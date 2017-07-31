@@ -16,12 +16,12 @@ void REALTIMERENDER::Init()
 
 void REALTIMERENDER::setTexture(unsigned char *buffer, int width, int height, GLenum format)
 {
-    if (textureId == 0) {
+    if (textureId == 0 || textureWidth != width || textureHeight != height) {
         textureId = createTexture2D(format, width, height, buffer);
+        textureWidth = width;
+        textureHeight = height;
     }else {
-        glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
         glBindTexture(GL_TEXTURE_2D, textureId);
-        
         glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, format, GL_UNSIGNED_BYTE, buffer);
     }
 }

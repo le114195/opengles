@@ -27,6 +27,7 @@ public:
     
     int esMain(ESContext *esContext);
     
+    
     struct UserData {
         
         void *platData;

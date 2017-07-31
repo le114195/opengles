@@ -41,6 +41,7 @@
 		757B885E1F21C8D6006A79DB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757B885D1F21C8D6006A79DB /* CoreMedia.framework */; };
 		757B88621F21DA3A006A79DB /* FilterScaleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 757B88611F21DA3A006A79DB /* FilterScaleController.mm */; };
 		757B88651F21DA48006A79DB /* filter_scale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 757B88631F21DA48006A79DB /* filter_scale.cpp */; };
+		758159C21F2F10260041A658 /* XMCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 758159C11F2F10260041A658 /* XMCamera.m */; };
 		75903D261F2B60750039A64C /* libyuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75903D251F2B60750039A64C /* libyuv.a */; };
 		75903D291F2B60CD0039A64C /* GLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 75903D281F2B60CD0039A64C /* GLTexture.m */; };
 		75AD85431F23342400047E84 /* OneTextureController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75AD85421F23342400047E84 /* OneTextureController.mm */; };
@@ -362,6 +363,8 @@
 		757B88611F21DA3A006A79DB /* FilterScaleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FilterScaleController.mm; sourceTree = "<group>"; };
 		757B88631F21DA48006A79DB /* filter_scale.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = filter_scale.cpp; sourceTree = "<group>"; };
 		757B88641F21DA48006A79DB /* filter_scale.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = filter_scale.hpp; sourceTree = "<group>"; };
+		758159C01F2F10260041A658 /* XMCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMCamera.h; sourceTree = "<group>"; };
+		758159C11F2F10260041A658 /* XMCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMCamera.m; sourceTree = "<group>"; };
 		75903D111F2B60750039A64C /* basic_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basic_types.h; sourceTree = "<group>"; };
 		75903D121F2B60750039A64C /* compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compare.h; sourceTree = "<group>"; };
 		75903D131F2B60750039A64C /* convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert.h; sourceTree = "<group>"; };
@@ -1768,6 +1771,8 @@
 				75CBAAC51F287A7D001E569C /* new_opengles_base.hpp */,
 				75CBAAC71F288482001E569C /* OpenGLESView.h */,
 				75CBAAC81F288482001E569C /* OpenGLESView.m */,
+				758159C01F2F10260041A658 /* XMCamera.h */,
+				758159C11F2F10260041A658 /* XMCamera.m */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -2118,6 +2123,7 @@
 				75DD09F51F28B7D40032B94D /* GPUImageSoftLightBlendFilter.m in Sources */,
 				75DD09DA1F28B7D40032B94D /* GPUImagePinchDistortionFilter.m in Sources */,
 				75DD09931F28B7D40032B94D /* GPUImageEmbossFilter.m in Sources */,
+				758159C21F2F10260041A658 /* XMCamera.m in Sources */,
 				75DD09F91F28B7D40032B94D /* GPUImageSphereRefractionFilter.m in Sources */,
 				753B6FED1F222253009F8FFE /* BlendController.mm in Sources */,
 				75DD0A101F28B7D40032B94D /* GPUImageView.m in Sources */,
