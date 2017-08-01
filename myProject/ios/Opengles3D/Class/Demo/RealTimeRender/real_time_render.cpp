@@ -7,12 +7,20 @@
 //
 
 #include "real_time_render.hpp"
+#include <thread>
 
 
 void REALTIMERENDER::Init()
 {
+    
     programObject = gl_esLoadProgram(vShader, fShader);
 }
+
+void REALTIMERENDER::thread_func()
+{
+    
+}
+
 
 void REALTIMERENDER::setTexture(unsigned char *buffer, int width, int height, GLenum format)
 {

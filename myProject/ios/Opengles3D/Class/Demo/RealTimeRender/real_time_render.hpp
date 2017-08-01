@@ -20,6 +20,8 @@ public:
     
     void render();
     
+    void thread_func();
+    
     void setTexture(unsigned char *buffer, int width, int height, GLenum format);
 
 public:
@@ -27,6 +29,9 @@ public:
     GLuint textureId;
     int textureWidth = 0;
     int textureHeight = 0;
+    
+    unsigned char *outBuffer;
+    
 };
 
 

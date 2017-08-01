@@ -32,8 +32,6 @@
     
     self.camera = [[XMCamera alloc] init];
     
-    
-    
     self.isFirst = YES;
     
     self.realView = [[RealTimeView alloc] initWithFrame:self.view.bounds];
@@ -48,7 +46,39 @@
     
     [self.camera startCaptureSession];
 
+    
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    
+    CGFloat radius = 70;
+    
+    UIButton *recorderBtn = [[UIButton alloc] initWithFrame:CGRectMake((width - radius) * 0.5, height - radius - 30, radius, radius)];
+    [self.view addSubview:recorderBtn];
+    recorderBtn.backgroundColor = [UIColor redColor];
+    
+    recorderBtn.layer.cornerRadius = radius * 0.5;
+    
+    [recorderBtn addTarget:self action:@selector(startRecorder:) forControlEvents:UIControlEventTouchDown];
+    [recorderBtn addTarget:self action:@selector(endRecorder:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+
+- (void)startRecorder:(UIButton *)button
+{
+    button.backgroundColor = [UIColor greenColor];
+    
+
+}
+
+- (void)endRecorder:(UIButton *)button
+{
+    button.backgroundColor = [UIColor redColor];
+    
+    
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

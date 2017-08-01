@@ -9,7 +9,6 @@
 #import "MultipleSampleView.h"
 #import "OpenglesTool.h"
 #include "multiple_sample.hpp"
-#include "OpencvHeader.h"
 
 @implementation MultipleSampleView
 {
@@ -32,9 +31,14 @@
     demo.destoryRenderAndFrameBuffer();
     
     demo.setupFrameAndRenderBuffer();
-    demo.setupFrameBuffer2();
-
     
+    // 为 color renderbuffer 分配存储空间
+    [_context renderbufferStorage:GL_RENDERBUFFER fromDrawable:_eaglLayer];
+
+    //创建离屏framebuffer
+    demo.setupFrameBuffer2();
+    
+    //渲染
     demo.render();
     
     //将指定 renderbuffer 呈现在屏幕上，在这里我们指定的是前面已经绑定为当前 renderbuffer 的那个，在 renderbuffer 可以被呈现之前，必须调用renderbufferStorage:fromDrawable: 为之分配存储空间。
@@ -77,13 +81,6 @@
     glReadPixels(0, 0, demo.s_width, demo.s_height, GL_RGBA, GL_UNSIGNED_BYTE, demo.buffer1);
     
     NSLog(@"%f", [[NSDate date] timeIntervalSince1970]);
-    
-    cv::Mat src1;
-    src1.create(demo.s_height, demo.s_width, CV_8UC4);
-    memcpy(src1.data, demo.buffer1, demo.s_height * demo.s_width * 4);
-    UIImage *image1 = MatToUIImage(src1);
-    
-    NSLog(@"%@", NSStringFromCGSize(image1.size));
     
     free(demo.buffer1);
 }

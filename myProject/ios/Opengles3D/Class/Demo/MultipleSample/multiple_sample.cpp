@@ -43,6 +43,7 @@ void MULTIPLE_SAMPLE::render()
     };
     GLushort indices[] = { 0, 1, 2, 0, 2, 3 };
     
+    /*- - - - - - - - - - - - - - - - - - -*/
     glUseProgram(programObject);//黑白
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer1);
     
@@ -63,11 +64,12 @@ void MULTIPLE_SAMPLE::render()
     
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
     
+    
+    /*- - - - - - - - - - - - - - - - - - -*/
     glUseProgram(program2);//马赛克
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer2);
     
     glViewport(0, 0, s_width, s_height);
-    
     
     // Clear the color buffer
     glClearColor(1.0, 1.0, 1.0, 1.0);
@@ -83,6 +85,9 @@ void MULTIPLE_SAMPLE::render()
     glBindTexture(GL_TEXTURE_2D, textureId2);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
     
+    
+    
+    /*- - - - - - - - - - - - - - - - - - -*/
     glUseProgram(program3);//红色通道
     glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
     
@@ -103,4 +108,20 @@ void MULTIPLE_SAMPLE::render()
     
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
 }
+
+MULTIPLE_SAMPLE::~MULTIPLE_SAMPLE()
+{
+    glDeleteTextures(1, &textureId1);
+    glDeleteTextures(1, &textureId2);
+    glDeleteTextures(1, &textureId3);
+    
+    glDeleteFramebuffers(1, &frameBuffer);
+    glDeleteFramebuffers(1, &framebuffer1);
+    glDeleteFramebuffers(1, &framebuffer2);
+    
+    glDeleteProgram(programObject);
+    glDeleteProgram(program2);
+    glDeleteProgram(program3);
+}
+
 

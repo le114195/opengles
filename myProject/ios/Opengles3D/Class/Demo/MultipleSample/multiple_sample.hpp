@@ -21,6 +21,7 @@ public:
     
     void setupFrameBuffer2();
     
+    ~MULTIPLE_SAMPLE();
     
 public:
     

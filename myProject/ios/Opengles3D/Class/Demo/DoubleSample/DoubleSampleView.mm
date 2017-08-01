@@ -9,6 +9,7 @@
 #import "DoubleSampleView.h"
 #include "double_sample.hpp"
 #import "OpenglesTool.h"
+#include "OpencvHeader.h"
 
 @implementation DoubleSampleView
 {
@@ -62,7 +63,6 @@
     
     demo.Init();
 }
-
 
 
 

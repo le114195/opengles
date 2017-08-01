@@ -12,7 +12,6 @@
 
 @property (nonatomic, copy) void(^VideoDataBlock)(unsigned char *buffer, size_t width, size_t height);
 
-
 - (void)startCaptureSession;
 
 - (void)stopCaptureSession;
