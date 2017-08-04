@@ -17,6 +17,12 @@ public:
     
     void Init();
     
+    void renderBW(GLuint inputTexture, GLuint &rsTexture);
+    
+    void renderMS(GLuint inputTexture, GLuint &rsTexture);
+    
+    void renderRed(GLuint inputTexture, GLuint &rsTexture);
+    
     void render();
     
     void setupFrameBuffer2();

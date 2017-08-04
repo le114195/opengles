@@ -19,7 +19,6 @@ void MULTIPLE_SAMPLE::setupFrameBuffer2()
     glGenFramebuffers(1, &framebuffer2);
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer2);
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, textureId3, 0);
-    
 }
 
 void MULTIPLE_SAMPLE::Init()
@@ -29,7 +28,9 @@ void MULTIPLE_SAMPLE::Init()
     program3 = gl_esLoadProgram(vShader, fShader3);
 }
 
-void MULTIPLE_SAMPLE::render()
+
+/** 离屏渲染 */
+void MULTIPLE_SAMPLE::renderBW(GLuint inputTexture, GLuint &rsTexture)
 {
     static GLfloat vVertices[] = {
         -1.0f,  1.0f, 0.0f,  // Position 0
@@ -41,12 +42,10 @@ void MULTIPLE_SAMPLE::render()
         1.0f,  1.0f, 0.0f,  // Position 3
         1.0f,  0.0f,         // TexCoord 3
     };
-    GLushort indices[] = { 0, 1, 2, 0, 2, 3 };
+    static GLushort indices[] = { 0, 1, 2, 0, 2, 3 };
     
-    /*- - - - - - - - - - - - - - - - - - -*/
-    glUseProgram(programObject);//黑白
+    glUseProgram(programObject);
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer1);
-    
     glViewport(0, 0, s_width, s_height);
     
     // Clear the color buffer
@@ -60,15 +59,32 @@ void MULTIPLE_SAMPLE::render()
     glEnableVertexAttribArray(1);
     
     glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, textureId1);
+    glBindTexture(GL_TEXTURE_2D, inputTexture);
     
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
+    glFinish();
     
+    rsTexture = textureId2;
+}
+
+
+/** 离屏渲染 */
+void MULTIPLE_SAMPLE::renderMS(GLuint inputTexture, GLuint &rsTexture)
+{
+    static GLfloat vVertices[] = {
+        -1.0f,  1.0f, 0.0f,  // Position 0
+        0.0f,  0.0f,        // TexCoord 0
+        -1.0f, -1.0f, 0.0f,  // Position 1
+        0.0f,  1.0f,        // TexCoord 1
+        1.0f, -1.0f, 0.0f,  // Position 2
+        1.0f,  1.0f,        // TexCoord 2
+        1.0f,  1.0f, 0.0f,  // Position 3
+        1.0f,  0.0f,         // TexCoord 3
+    };
+    static GLushort indices[] = { 0, 1, 2, 0, 2, 3 };
     
-    /*- - - - - - - - - - - - - - - - - - -*/
-    glUseProgram(program2);//马赛克
+    glUseProgram(program2);
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer2);
-    
     glViewport(0, 0, s_width, s_height);
     
     // Clear the color buffer
@@ -82,31 +98,65 @@ void MULTIPLE_SAMPLE::render()
     glEnableVertexAttribArray(1);
     
     glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, textureId2);
+    glBindTexture(GL_TEXTURE_2D, inputTexture);
+    
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
+    glFinish();
     
+    rsTexture = textureId3;
+}
+
+/** 渲染到屏幕上 */
+void MULTIPLE_SAMPLE::renderRed(GLuint inputTexture, GLuint &rsTexture)
+{
+    static GLfloat vVertices[] = {
+        -1.0f,  1.0f, 0.0f,  // Position 0
+        0.0f,  0.0f,        // TexCoord 0
+        -1.0f, -1.0f, 0.0f,  // Position 1
+        0.0f,  1.0f,        // TexCoord 1
+        1.0f, -1.0f, 0.0f,  // Position 2
+        1.0f,  1.0f,        // TexCoord 2
+        1.0f,  1.0f, 0.0f,  // Position 3
+        1.0f,  0.0f,         // TexCoord 3
+    };
+    static GLushort indices[] = { 0, 1, 2, 0, 2, 3 };
     
+    glUseProgram(program3);
+    glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
+    glViewport(0, 0, s_width, s_height);
+    
+    // Clear the color buffer
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+    glClear ( GL_COLOR_BUFFER_BIT );
+    
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), vVertices);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), &vVertices[3]);
+    
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+    
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, inputTexture);
+    
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
+    glFinish();
+}
+
+
+void MULTIPLE_SAMPLE::render()
+{
+    GLuint rsTexture;
+    GLuint inputTexture;
+    
+    renderBW(textureId1, rsTexture);
+    inputTexture = rsTexture;
     
     /*- - - - - - - - - - - - - - - - - - -*/
-    glUseProgram(program3);//红色通道
-    glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
+    renderMS(inputTexture, rsTexture);
+    inputTexture = rsTexture;
     
-    glViewport(0, 0, s_width, s_height);
-    
-    // Clear the color buffer
-    glClearColor(1.0, 1.0, 1.0, 1.0);
-    glClear ( GL_COLOR_BUFFER_BIT );
-    
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), vVertices);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), &vVertices[3]);
-    
-    glEnableVertexAttribArray(0);
-    glEnableVertexAttribArray(1);
-    
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, textureId3);
-    
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
+    /*- - - - - - - - - - - - - - - - - - -*/
+    renderRed(inputTexture, rsTexture);
 }
 
 MULTIPLE_SAMPLE::~MULTIPLE_SAMPLE()
