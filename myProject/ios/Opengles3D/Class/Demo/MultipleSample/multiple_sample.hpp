@@ -15,6 +15,8 @@ class MULTIPLE_SAMPLE:public NEW_OPENGLES_BASE
 {
 public:
     
+    void setTexture(unsigned char *buffer, int width, int height, GLenum format);
+    
     void Init();
     
     void renderBW(GLuint inputTexture, GLuint &rsTexture);
@@ -32,6 +34,9 @@ public:
 public:
     
     GLuint textureId1;
+    int textureWidth = 0;
+    int textureHeight = 0;
+    
     GLuint textureId2;
     GLuint textureId3;
     
@@ -48,7 +53,10 @@ public:
     unsigned char *buffer2;
     unsigned char *buffer3;
     
+    unsigned char *outBuffer;
     
+    
+    int count = 0;
 };
 
 

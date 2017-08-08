@@ -8,6 +8,7 @@
 
 #include "xl_blend.hpp"
 
+
 int BLEND_XL::Init ( ESContext *esContext ) {
     
     UserData *userData = (UserData *)esContext->userData;
@@ -76,6 +77,8 @@ void BLEND_XL::Draw ( ESContext *esContext ) {
     glEnable(GL_BLEND);
     
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
+    glFlush();
+    
 }
 
 void BLEND_XL::Update ( ESContext *esContext, float deltaTime ) {

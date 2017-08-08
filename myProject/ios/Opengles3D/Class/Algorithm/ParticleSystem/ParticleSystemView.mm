@@ -1,30 +1,28 @@
 //
-//  OneInputView.m
+//  ParticleSystemView.m
 //  Opengles3D
 //
-//  Created by 勒俊 on 2017/8/3.
+//  Created by 勒俊 on 2017/8/7.
 //  Copyright © 2017年 XunLei. All rights reserved.
 //
 
-#import "OneInputView.h"
+#import "ParticleSystemView.h"
+#include "ParticleSystem.hpp"
 #import "OpenglesTool.h"
-#include "one_input.hpp"
 
-@implementation OneInputView
+@implementation ParticleSystemView
 {
-    OneInput_C demo;
-    BOOL xx;
+    ParticleSystem demo;
 }
-
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if ([super initWithFrame:frame]) {
         [self setupGLData];
-        xx = YES;
     }
     return self;
 }
+
 
 - (void)layoutSubviews
 {
@@ -46,40 +44,32 @@
 
 - (void)setupGLData
 {
-    demo.vShader = [OpenglesTool readFileData:@"sketch_shader.vs"];
-    demo.fShader = [OpenglesTool readFileData:@"sketch_shader.frag"];
+    demo.vShader = [OpenglesTool readFileData:@"particle_shader.vs"];
+    demo.fShader = [OpenglesTool readFileData:@"particle_shader.frag"];
     
-    demo.toonVShader = [OpenglesTool readFileData:@"toon_shader.vs"];
-    demo.toonFSahder = [OpenglesTool readFileData:@"toon_shader.frag"];
+    UIImage *image = [UIImage imageNamed:@"testimg.png"];
     
-    demo.s_width = self.frame.size.width;
-    demo.s_height = self.frame.size.height;
-    
-    UIImage *image = [UIImage imageNamed:@"test002.jpg"];
+    demo.s_width = self.bounds.size.width;
+    demo.s_height = self.bounds.size.width;
     
     unsigned char *buffer = [OpenglesTool getBuffer:image];
     
-    demo.s_width = self.frame.size.width;
-    demo.s_height = self.frame.size.height;
-    
-//    demo.textureId = createTexture2D(GL_RGBA, image.size.width, image.size.height, buffer);
-    
-    demo.setTexture(buffer, image.size.width, image.size.height, GL_RGBA);
-    
+    demo.textureId = createTexture2D(GL_RGBA, image.size.width, image.size.height, buffer);
     
     demo.Init();
 }
 
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    xx = !xx;
-    if (xx) {
-        demo.render();
-    }else {
-        demo.renderToon();
-    }
+
+- (void)needRend:(float)time {
+    
+    demo.Update(time);
+    
+    demo.render();
+    //将指定 renderbuffer 呈现在屏幕上，在这里我们指定的是前面已经绑定为当前 renderbuffer 的那个，在 renderbuffer 可以被呈现之前，必须调用renderbufferStorage:fromDrawable: 为之分配存储空间。
     [_context presentRenderbuffer:GL_RENDERBUFFER];
+    
+//    glReadPixels(0, 0, demo.s_width, demo.s_height, GL_RGBA, GL_UNSIGNED_BYTE, demo.outBuffer);
 }
 
 

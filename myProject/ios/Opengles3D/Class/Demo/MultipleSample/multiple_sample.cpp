@@ -29,6 +29,19 @@ void MULTIPLE_SAMPLE::Init()
 }
 
 
+void MULTIPLE_SAMPLE::setTexture(unsigned char *buffer, int width, int height, GLenum format)
+{
+    if (textureId1 == 0 || textureWidth != width || textureHeight != height) {
+        textureId1 = createTexture2D(format, width, height, buffer);
+        textureWidth = width;
+        textureHeight = height;
+    }else {
+        glBindTexture(GL_TEXTURE_2D, textureId1);
+        glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, format, GL_UNSIGNED_BYTE, buffer);
+    }
+}
+
+
 /** 离屏渲染 */
 void MULTIPLE_SAMPLE::renderBW(GLuint inputTexture, GLuint &rsTexture)
 {
@@ -145,18 +158,25 @@ void MULTIPLE_SAMPLE::renderRed(GLuint inputTexture, GLuint &rsTexture)
 
 void MULTIPLE_SAMPLE::render()
 {
+    count++;
+    
+    
+    
     GLuint rsTexture;
     GLuint inputTexture;
     
     renderBW(textureId1, rsTexture);
+    glFinish();
     inputTexture = rsTexture;
     
     /*- - - - - - - - - - - - - - - - - - -*/
     renderMS(inputTexture, rsTexture);
+    glFinish();
     inputTexture = rsTexture;
     
     /*- - - - - - - - - - - - - - - - - - -*/
     renderRed(inputTexture, rsTexture);
+    glFinish();
 }
 
 MULTIPLE_SAMPLE::~MULTIPLE_SAMPLE()

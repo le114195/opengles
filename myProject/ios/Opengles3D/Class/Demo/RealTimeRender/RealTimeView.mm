@@ -20,6 +20,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if ([super initWithFrame:frame]) {
+        
         [self setupGLData];
     }
     return self;

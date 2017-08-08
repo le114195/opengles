@@ -38,7 +38,7 @@
     userData->vShader = [OpenglesTool readFileData:@"sobel_edge_shader.vs"];
     userData->fShader = [OpenglesTool readFileData:@"sobel_edge_shader.frag"];
     
-    UIImage *image = [UIImage imageNamed:@"sj_20160705_2.JPG"];
+    UIImage *image = [UIImage imageNamed:@"test002.jpg"];
     
     userData->buffer = [OpenglesTool getBuffer:image];
     userData->buffer_width = image.size.width;

@@ -74,6 +74,7 @@ void SOBEL_EDGE::Draw ( ESContext *esContext ) {
 void SOBEL_EDGE::Update ( ESContext *esContext, float deltaTime ) {
     
     
+    
 }
 
 

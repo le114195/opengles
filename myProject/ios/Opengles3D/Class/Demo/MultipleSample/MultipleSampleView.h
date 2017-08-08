@@ -10,4 +10,6 @@
 
 @interface MultipleSampleView : OpenGLESView
 
+- (void)needRend:(unsigned char *)buffer width:(int)width height:(int)height;
+
 @end

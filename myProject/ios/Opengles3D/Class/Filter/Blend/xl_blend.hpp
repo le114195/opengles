@@ -29,6 +29,7 @@ private:
     
 public:
     
+    
     struct UserData{
         
         /// Put platform specific data here

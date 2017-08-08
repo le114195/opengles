@@ -26,7 +26,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.dataArray = @[@"ViewController", @"Demo2ViewController", @"Demo3ViewController", @"Demo4ViewController", @"Demo5ViewController", @"Filter1Controller", @"Filter2Controller", @"FilterScaleController", @"BlendController", @"OneInputController", @"EdgeDetectionController", @"ColorShakeController", @"SobelEdgeController", @"GPUImageController", @"FrameBufferController", @"DoubleSampleController", @"GaussianBlurController", @"MultipleSampleController", @"RealTimeController"];
+    self.dataArray = @[@"ViewController", @"Demo2ViewController", @"Demo3ViewController", @"Demo4ViewController", @"Demo5ViewController", @"Filter1Controller", @"Filter2Controller", @"FilterScaleController", @"BlendController", @"OneInputController", @"EdgeDetectionController", @"ColorShakeController", @"SobelEdgeController", @"GPUImageController", @"FrameBufferController", @"DoubleSampleController", @"GaussianBlurController", @"MultipleSampleController", @"RealTimeController", @"ParticleSystemController"];
     
     self.nameArray = @[@"demo1", @"demo2", @"demo3"];
     
