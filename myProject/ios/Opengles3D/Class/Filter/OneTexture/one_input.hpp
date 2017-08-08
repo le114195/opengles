@@ -15,6 +15,8 @@
 class OneInput_C:public NEW_OPENGLES_BASE
 {
 public:
+    void setupFrameBuffer2();
+    
     void Init();
     
     void render();
@@ -37,6 +39,21 @@ public:
     int textureHeight = 0;
     
     unsigned char *outBuffer;
+    
+    
+    GLuint textureId2;
+    GLuint textureId3;
+    
+    GLuint program2;
+    GLuint program3;
+    
+    GLuint gProgram;
+    const char* g_vShader;
+    const char *g_fShader;
+    
+    GLuint framebuffer2;
+    GLuint framebuffer3;
+    
     
 };
 

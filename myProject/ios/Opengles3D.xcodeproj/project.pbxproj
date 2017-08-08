@@ -302,8 +302,6 @@
 		75E832AA1F17128F00F53588 /* esTransform.c in Sources */ = {isa = PBXBuildFile; fileRef = 75E832A21F17128F00F53588 /* esTransform.c */; };
 		75E832AB1F17128F00F53588 /* esUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 75E832A31F17128F00F53588 /* esUtil.c */; };
 		75E832AC1F17128F00F53588 /* FileWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E832A71F17128F00F53588 /* FileWrapper.m */; };
-		75E832AD1F17128F00F53588 /* shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75E832A81F17128F00F53588 /* shader.frag */; };
-		75E832AE1F17128F00F53588 /* shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75E832A91F17128F00F53588 /* shader.vs */; };
 		75E832B81F17147D00F53588 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E832B71F17147D00F53588 /* GLKit.framework */; };
 		75E832BA1F17148300F53588 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E832B91F17148300F53588 /* OpenGLES.framework */; };
 		75E832C51F171EBC00F53588 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E832C41F171EBC00F53588 /* RootViewController.m */; };
@@ -312,6 +310,10 @@
 		75E832DF1F174B7700F53588 /* BaseGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E832DE1F174B7700F53588 /* BaseGLKViewController.m */; };
 		75E832E31F174D2900F53588 /* OpenglesTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E832E21F174D2900F53588 /* OpenglesTool.m */; };
 		75E832E61F174EEC00F53588 /* OpenglesBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E832E41F174EEC00F53588 /* OpenglesBase.cpp */; };
+		75F56A101F39A89F0073EACD /* L0Smoothing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75F56A0E1F39A89F0073EACD /* L0Smoothing.cpp */; };
+		75F56B871F39B39A0073EACD /* MatLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75F56B851F39B39A0073EACD /* MatLib.cpp */; };
+		75F56B891F39BA620073EACD /* pflower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 75F56B881F39BA620073EACD /* pflower.jpg */; };
+		75F56B8D1F39CF4F0073EACD /* dynamic_shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75F56B8B1F39CF4F0073EACD /* dynamic_shader.cpp */; };
 		75F9BB191F27330A00BAFF9F /* GPUImageController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75F9BB181F27330A00BAFF9F /* GPUImageController.mm */; };
 /* End PBXBuildFile section */
 
@@ -869,8 +871,6 @@
 		75E832A51F17128F00F53588 /* esUtil_win.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = esUtil_win.h; sourceTree = "<group>"; };
 		75E832A61F17128F00F53588 /* FileWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileWrapper.h; sourceTree = "<group>"; };
 		75E832A71F17128F00F53588 /* FileWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileWrapper.m; sourceTree = "<group>"; };
-		75E832A81F17128F00F53588 /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
-		75E832A91F17128F00F53588 /* shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vs; sourceTree = "<group>"; };
 		75E832B31F17144D00F53588 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		75E832B51F17145400F53588 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		75E832B71F17147D00F53588 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -887,6 +887,13 @@
 		75E832E21F174D2900F53588 /* OpenglesTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenglesTool.m; sourceTree = "<group>"; };
 		75E832E41F174EEC00F53588 /* OpenglesBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenglesBase.cpp; sourceTree = "<group>"; };
 		75E832E51F174EEC00F53588 /* OpenglesBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OpenglesBase.hpp; sourceTree = "<group>"; };
+		75F56A0E1F39A89F0073EACD /* L0Smoothing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = L0Smoothing.cpp; sourceTree = "<group>"; };
+		75F56A0F1F39A89F0073EACD /* L0Smoothing.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = L0Smoothing.hpp; sourceTree = "<group>"; };
+		75F56B851F39B39A0073EACD /* MatLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MatLib.cpp; sourceTree = "<group>"; };
+		75F56B861F39B39A0073EACD /* MatLib.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MatLib.hpp; sourceTree = "<group>"; };
+		75F56B881F39BA620073EACD /* pflower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pflower.jpg; sourceTree = "<group>"; };
+		75F56B8B1F39CF4F0073EACD /* dynamic_shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dynamic_shader.cpp; sourceTree = "<group>"; };
+		75F56B8C1F39CF4F0073EACD /* dynamic_shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = dynamic_shader.hpp; sourceTree = "<group>"; };
 		75F827AE1F18A1EB001C219E /* demo_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = demo_data.h; sourceTree = "<group>"; };
 		75F9BB171F27330A00BAFF9F /* GPUImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageController.h; sourceTree = "<group>"; };
 		75F9BB181F27330A00BAFF9F /* GPUImageController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GPUImageController.mm; sourceTree = "<group>"; };
@@ -1163,6 +1170,7 @@
 		75D9B4AE1F2597B50098E816 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				75F56A0D1F39A88C0073EACD /* L0Smoothing */,
 				75B56CA11F38911000079CAB /* ParticleSystem */,
 				75B8E9971F333011002B2E42 /* Sketch */,
 				752D391E1F28957F001859FF /* GaussianBlur */,
@@ -1316,6 +1324,7 @@
 		75DD07F51F28B7720032B94D /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				75F56B881F39BA620073EACD /* pflower.jpg */,
 				75B56C9A1F381C6800079CAB /* test002.jpg */,
 				75DD07F61F28B7720032B94D /* 12345.png */,
 				75DD07F71F28B7720032B94D /* ID_44.bmp */,
@@ -1763,8 +1772,8 @@
 				75E832A51F17128F00F53588 /* esUtil_win.h */,
 				75E832A61F17128F00F53588 /* FileWrapper.h */,
 				75E832A71F17128F00F53588 /* FileWrapper.m */,
-				75E832A81F17128F00F53588 /* shader.frag */,
-				75E832A91F17128F00F53588 /* shader.vs */,
+				75F56B8B1F39CF4F0073EACD /* dynamic_shader.cpp */,
+				75F56B8C1F39CF4F0073EACD /* dynamic_shader.hpp */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1831,6 +1840,17 @@
 				75E832E21F174D2900F53588 /* OpenglesTool.m */,
 			);
 			path = ToolClass;
+			sourceTree = "<group>";
+		};
+		75F56A0D1F39A88C0073EACD /* L0Smoothing */ = {
+			isa = PBXGroup;
+			children = (
+				75F56A0E1F39A89F0073EACD /* L0Smoothing.cpp */,
+				75F56A0F1F39A89F0073EACD /* L0Smoothing.hpp */,
+				75F56B851F39B39A0073EACD /* MatLib.cpp */,
+				75F56B861F39B39A0073EACD /* MatLib.hpp */,
+			);
+			path = L0Smoothing;
 			sourceTree = "<group>";
 		};
 		75F9BB161F2732EC00BAFF9F /* gpuimageTest */ = {
@@ -1901,7 +1921,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75E832AD1F17128F00F53588 /* shader.frag in Resources */,
 				75C78C071F260B18007D76FD /* color_shake_shader3.frag in Resources */,
 				756EBB361F284CEE00C2B479 /* frame_buffer_shader2.frag in Resources */,
 				75C78C081F260B18007D76FD /* color_shake_shader3.vs in Resources */,
@@ -1918,7 +1937,6 @@
 				75B8E99B1F33309B002B2E42 /* sketch_shader.vs in Resources */,
 				75DD08011F28B7720032B94D /* IMG_1805.PNG in Resources */,
 				75CBAAD61F2887AA001E569C /* double_sample_shader.vs in Resources */,
-				75E832AE1F17128F00F53588 /* shader.vs in Resources */,
 				75D1B2371F27068100609457 /* blur_shader3.frag in Resources */,
 				75D9B5081F25EE430098E816 /* sobel_edge_shader.frag in Resources */,
 				75D1B2341F26EB4B00609457 /* blur_shader2.vs in Resources */,
@@ -1929,6 +1947,7 @@
 				75024D221F3463CF00E90210 /* filter2_shader.frag in Resources */,
 				75B56C9B1F381C6800079CAB /* test002.jpg in Resources */,
 				75D9B4D21F2597B50098E816 /* 3d_demo1_shader.frag in Resources */,
+				75F56B891F39BA620073EACD /* pflower.jpg in Resources */,
 				75CBAABC1F287630001E569C /* vert.glsl in Resources */,
 				753B6FFC1F223629009F8FFE /* scale_filter_shader.frag in Resources */,
 				75CBAABB1F287630001E569C /* frag.glsl in Resources */,
@@ -2002,11 +2021,13 @@
 				75DD099B1F28B7D40032B94D /* GPUImageFilterPipeline.m in Sources */,
 				75DD09B71F28B7D40032B94D /* GPUImageLanczosResamplingFilter.m in Sources */,
 				75DD098B1F28B7D40032B94D /* GPUImageCrosshatchFilter.m in Sources */,
+				75F56B871F39B39A0073EACD /* MatLib.cpp in Sources */,
 				75DD09FD1F28B7D40032B94D /* GPUImageSwirlFilter.m in Sources */,
 				75B56CAB1F38958D00079CAB /* ParticleSystemView.mm in Sources */,
 				75DD09D31F28B7D40032B94D /* GPUImageOpeningFilter.m in Sources */,
 				75DD09E81F28B7D40032B94D /* GPUImageRGBOpeningFilter.m in Sources */,
 				75DD09AF1F28B7D40032B94D /* GPUImageHoughTransformLineDetector.m in Sources */,
+				75F56A101F39A89F0073EACD /* L0Smoothing.cpp in Sources */,
 				75DD09B21F28B7D40032B94D /* GPUImageHueFilter.m in Sources */,
 				756EBB2C1F284CA100C2B479 /* FrameBufferController.m in Sources */,
 				75DD0A041F28B7D40032B94D /* GPUImageTiltShiftFilter.m in Sources */,
@@ -2057,6 +2078,7 @@
 				75DD09B11F28B7D40032B94D /* GPUImageHueBlendFilter.m in Sources */,
 				75E832DF1F174B7700F53588 /* BaseGLKViewController.m in Sources */,
 				75D9B4FD1F25A5730098E816 /* filter_blur.cpp in Sources */,
+				75F56B8D1F39CF4F0073EACD /* dynamic_shader.cpp in Sources */,
 				75DD09CD1F28B7D40032B94D /* GPUImageMovieWriter.m in Sources */,
 				75DD096B1F28B7D40032B94D /* GPUImage3x3ConvolutionFilter.m in Sources */,
 				75DD09A01F28B7D40032B94D /* GPUImageGaussianBlurFilter.m in Sources */,

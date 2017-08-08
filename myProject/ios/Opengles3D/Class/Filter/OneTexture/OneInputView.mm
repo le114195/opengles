@@ -9,6 +9,7 @@
 #import "OneInputView.h"
 #import "OpenglesTool.h"
 #include "one_input.hpp"
+#include "dynamic_shader.hpp"
 
 @implementation OneInputView
 {
@@ -34,6 +35,8 @@
     
     demo.setupFrameAndRenderBuffer();
     
+    demo.setupFrameBuffer2();
+    
     // 为 color renderbuffer 分配存储空间
     [_context renderbufferStorage:GL_RENDERBUFFER fromDrawable:_eaglLayer];
     
@@ -51,6 +54,17 @@
     
     demo.toonVShader = [OpenglesTool readFileData:@"toon_shader.vs"];
     demo.toonFSahder = [OpenglesTool readFileData:@"toon_shader.frag"];
+    
+    std::string vShaderStr, fShaderStr;
+    
+    gaussianVertexShaderStr(vShaderStr, 1.5);
+    gaussianFragmentShaderStr(fShaderStr, 1.5);
+    
+    demo.g_vShader = vShaderStr.c_str();
+    demo.g_fShader = fShaderStr.c_str();
+    
+    printf("%s\n", demo.g_vShader);
+    printf("%s\n", demo.g_fShader);
     
     demo.s_width = self.frame.size.width;
     demo.s_height = self.frame.size.height;

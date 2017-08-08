@@ -73,6 +73,7 @@ void ParticleSystem::Update (float deltaTime)
         glUniform4fv (colorLoc, 1, &color[0]);
     }
     glUniform1f(timeLoc, time);
+    printf("time = %f\n", time);
 }
 
 void ParticleSystem::render()
