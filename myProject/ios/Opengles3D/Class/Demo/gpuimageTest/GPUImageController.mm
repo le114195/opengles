@@ -44,21 +44,25 @@ using namespace cv;
     
     
     
-//    GPUImageSmoothToonFilter *filter = [[GPUImageSmoothToonFilter alloc] init];
+    GPUImageSmoothToonFilter *filter = [[GPUImageSmoothToonFilter alloc] init];
+    
+    [filter setValue:@1.5 forKey:@"blurRadiusInPixels"];
+    [filter setValue:@0.25 forKey:@"threshold"];
+    [filter setValue:@15.0 forKey:@"quantizationLevels"];
+
+    
+//    GPUImageToonFilter *filter = [[GPUImageToonFilter alloc] init];
 //    
-//    [filter setValue:@1.5 forKey:@"blurRadiusInPixels"];
 //    [filter setValue:@0.25 forKey:@"threshold"];
 //    [filter setValue:@10.0 forKey:@"quantizationLevels"];
 
     
-    GPUImageToonFilter *filter = [[GPUImageToonFilter alloc] init];
+//    GPUImageBilateralFilter *filter = [[GPUImageBilateralFilter alloc] init];
     
-    [filter setValue:@0.25 forKey:@"threshold"];
-    [filter setValue:@10.0 forKey:@"quantizationLevels"];
-
     
-
-    self.imgView.image = [filter imageByFilteringImage:image];
+    UIImage *newImage = [filter imageByFilteringImage:image];
+    
+    self.imgView.image = newImage;
     
     // Do any additional setup after loading the view.
 }

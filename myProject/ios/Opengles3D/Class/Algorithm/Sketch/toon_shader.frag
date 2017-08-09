@@ -9,8 +9,8 @@ varying vec2 bottomTextureCoordinate;
 varying vec2 bottomLeftTextureCoordinate;
 varying vec2 bottomRightTextureCoordinate;
 uniform sampler2D inputImageTexture;
-const highp float threshold = 0.3;
-const highp float quantizationLevels = 10.0;
+const highp float threshold = 0.25;
+const highp float quantizationLevels = 15.0;
 const highp vec3 W = vec3(0.2125, 0.7154, 0.0721);
 void main()
 {

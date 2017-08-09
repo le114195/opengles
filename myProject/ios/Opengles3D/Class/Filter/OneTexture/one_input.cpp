@@ -22,11 +22,21 @@ void OneInput_C::setupFrameBuffer2()
     glGenFramebuffers(1, &framebuffer3);
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer3);
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, textureId3, 0);
+    
+    textureId4 = createTexture2D(GL_RGBA, s_width, s_height, NULL);
+    glGenFramebuffers(1, &framebuffer4);
+    glBindFramebuffer(GL_FRAMEBUFFER, framebuffer4);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, textureId4, 0);
+    
 }
 
 void OneInput_C::Init()
 {
-    programObject = gl_esLoadProgram(vShader, fShader);
+    programObject = gl_esLoadProgram(vShader, fShader);//素描
+    
+//    programObject = gl_esLoadProgram(bvShader, bfShader);//双边模糊
+    
+//    programObject = gl_esLoadProgram(tonsureVShader, tonsureFShader);//颜色梯度
     
     textureWLoc = glGetUniformLocation(programObject, "texelWidth");
     textureHLoc = glGetUniformLocation(programObject, "texelHeight");
@@ -62,11 +72,25 @@ void OneInput_C::render()
         1.0f,  1.0f, 0.0f,  // Position 3
         1.0f,  0.0f,         // TexCoord 3
     };
+    
+    
+//    static GLfloat vVertices[] = {
+//        -1.0f,  1.0f, 0.0f,  // Position 0
+//        0.0f,  1.0f,        // TexCoord 0
+//        -1.0f, -1.0f, 0.0f,  // Position 1
+//        0.0f,  0.0f,        // TexCoord 1
+//        1.0f, -1.0f, 0.0f,  // Position 2
+//        1.0f,  0.0f,        // TexCoord 2
+//        1.0f,  1.0f, 0.0f,  // Position 3
+//        1.0f,  1.0f,         // TexCoord 3
+//    };
+    
+    
     GLushort indices[] = { 0, 1, 2, 0, 2, 3 };
     
     
     glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
-    glUseProgram(programObject);
+    glUseProgram(toonProgram);
     
     glViewport(0, 0, s_width, s_height);
     
@@ -80,28 +104,42 @@ void OneInput_C::render()
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
     
-    glUniform1f(textureWLoc, 1.0 / s_width);
-    glUniform1f(textureHLoc, 1.0 / s_height);
+    glUniform1f(textureWLoc, 1.0 / textureWidth);
+    glUniform1f(textureHLoc, 0.0);
     
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, textureId);
     
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
+    glFinish();
 }
 
 
 void OneInput_C::renderToon()
 {
-    static GLfloat vVertices[] = {
+//    static GLfloat vVertices[] = {
+//        -1.0f,  1.0f, 0.0f,  // Position 0
+//        0.0f,  0.0f,        // TexCoord 0
+//        -1.0f, -1.0f, 0.0f,  // Position 1
+//        0.0f,  1.0f,        // TexCoord 1
+//        1.0f, -1.0f, 0.0f,  // Position 2
+//        1.0f,  1.0f,        // TexCoord 2
+//        1.0f,  1.0f, 0.0f,  // Position 3
+//        1.0f,  0.0f,         // TexCoord 3
+//    };
+    
+    static GLfloat vVertices[] = {//倒转
         -1.0f,  1.0f, 0.0f,  // Position 0
-        0.0f,  0.0f,        // TexCoord 0
+        0.0f,  1.0f,        // TexCoord 0
         -1.0f, -1.0f, 0.0f,  // Position 1
-        0.0f,  1.0f,        // TexCoord 1
+        0.0f,  0.0f,        // TexCoord 1
         1.0f, -1.0f, 0.0f,  // Position 2
-        1.0f,  1.0f,        // TexCoord 2
+        1.0f,  0.0f,        // TexCoord 2
         1.0f,  1.0f, 0.0f,  // Position 3
-        1.0f,  0.0f,         // TexCoord 3
+        1.0f,  1.0f,         // TexCoord 3
     };
+
+    
     GLushort indices[] = { 0, 1, 2, 0, 2, 3 };
     
     
@@ -126,7 +164,7 @@ void OneInput_C::renderToon()
     glBindTexture(GL_TEXTURE_2D, textureId);
     
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
-    
+    glFlush();
     
     
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer3);
@@ -149,10 +187,10 @@ void OneInput_C::renderToon()
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, textureId2);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
-
+    glFlush();
     
     
-    glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
+    glBindFramebuffer(GL_FRAMEBUFFER, framebuffer4);
     glUseProgram(toonProgram);
     glViewport(0, 0, s_width, s_height);
     

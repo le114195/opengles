@@ -10,6 +10,7 @@
 #import "OpenglesTool.h"
 #include "one_input.hpp"
 #include "dynamic_shader.hpp"
+#include "OpencvHeader.h"
 
 @implementation OneInputView
 {
@@ -40,10 +41,14 @@
     // 为 color renderbuffer 分配存储空间
     [_context renderbufferStorage:GL_RENDERBUFFER fromDrawable:_eaglLayer];
     
-    demo.render();
+    demo.renderToon();
     
     //将指定 renderbuffer 呈现在屏幕上，在这里我们指定的是前面已经绑定为当前 renderbuffer 的那个，在 renderbuffer 可以被呈现之前，必须调用renderbufferStorage:fromDrawable: 为之分配存储空间。
     [_context presentRenderbuffer:GL_RENDERBUFFER];
+    
+    
+
+    
 }
 
 
@@ -55,6 +60,12 @@
     demo.toonVShader = [OpenglesTool readFileData:@"toon_shader.vs"];
     demo.toonFSahder = [OpenglesTool readFileData:@"toon_shader.frag"];
     
+    demo.bvShader = [OpenglesTool readFileData:@"bilateral_shader.vs"];
+    demo.bfShader = [OpenglesTool readFileData:@"bilateral_shader.frag"];
+    
+    demo.tonsureVShader = [OpenglesTool readFileData:@"tonsure_shader.vs"];
+    demo.tonsureFShader = [OpenglesTool readFileData:@"tonsure_shader.frag"];
+    
     std::string vShaderStr, fShaderStr;
     
     gaussianVertexShaderStr(vShaderStr, 1.5);
@@ -63,18 +74,16 @@
     demo.g_vShader = vShaderStr.c_str();
     demo.g_fShader = fShaderStr.c_str();
     
-    printf("%s\n", demo.g_vShader);
-    printf("%s\n", demo.g_fShader);
-    
-    demo.s_width = self.frame.size.width;
-    demo.s_height = self.frame.size.height;
     
     UIImage *image = [UIImage imageNamed:@"test002.jpg"];
     
     unsigned char *buffer = [OpenglesTool getBuffer:image];
     
-    demo.s_width = self.frame.size.width;
-    demo.s_height = self.frame.size.height;
+    demo.s_width = image.size.width;
+    demo.s_height = image.size.height;
+    
+    
+    demo.outBuffer = (unsigned char *)malloc(sizeof(char) * demo.s_width * demo.s_height * 4);
     
 //    demo.textureId = createTexture2D(GL_RGBA, image.size.width, image.size.height, buffer);
     
@@ -87,13 +96,30 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    xx = !xx;
-    if (xx) {
-        demo.render();
-    }else {
-        demo.renderToon();
-    }
-    [_context presentRenderbuffer:GL_RENDERBUFFER];
+//    xx = !xx;
+//    if (xx) {
+//        demo.render();
+//    }else {
+//        demo.renderToon();
+//    }
+//    [_context presentRenderbuffer:GL_RENDERBUFFER];
+    
+    NSLog(@"%f", [[NSDate date] timeIntervalSince1970]);
+    
+    glBindFramebuffer(GL_FRAMEBUFFER, demo.framebuffer4);
+    
+    glReadPixels(0, 0, demo.s_width, demo.s_height, GL_RGBA, GL_UNSIGNED_BYTE, demo.outBuffer);
+    
+    NSLog(@"%f", [[NSDate date] timeIntervalSince1970]);
+    
+    cv::Mat src;
+    src.create(demo.s_height, demo.s_width, CV_8UC4);
+    memcpy(src.data, demo.outBuffer, demo.s_width * demo.s_height * 4);
+    
+    UIImage *newImg = MatToUIImage(src);
+    
+    NSLog(@"%@", NSStringFromCGSize(newImg.size));
+    
 }
 
 

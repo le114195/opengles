@@ -35,6 +35,7 @@ public:
     GLuint textureId;
     GLint textureWLoc;
     GLint textureHLoc;
+    
     int textureWidth = 0;
     int textureHeight = 0;
     
@@ -43,6 +44,7 @@ public:
     
     GLuint textureId2;
     GLuint textureId3;
+    GLuint textureId4;
     
     GLuint program2;
     GLuint program3;
@@ -53,7 +55,16 @@ public:
     
     GLuint framebuffer2;
     GLuint framebuffer3;
+    GLuint framebuffer4;
     
+    //双边模糊
+    const char* bvShader;
+    const char* bfShader;
+    
+    
+    //梯度
+    const char *tonsureVShader;
+    const char *tonsureFShader;
     
 };
 

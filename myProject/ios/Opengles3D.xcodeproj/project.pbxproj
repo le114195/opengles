@@ -315,6 +315,11 @@
 		75F56B891F39BA620073EACD /* pflower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 75F56B881F39BA620073EACD /* pflower.jpg */; };
 		75F56B8D1F39CF4F0073EACD /* dynamic_shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75F56B8B1F39CF4F0073EACD /* dynamic_shader.cpp */; };
 		75F9BB191F27330A00BAFF9F /* GPUImageController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75F9BB181F27330A00BAFF9F /* GPUImageController.mm */; };
+		75FCA7A71F3AA8A600491CEE /* bilateral_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75FCA7A51F3AA8A600491CEE /* bilateral_shader.frag */; };
+		75FCA7A81F3AA8A600491CEE /* bilateral_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75FCA7A61F3AA8A600491CEE /* bilateral_shader.vs */; };
+		75FCA7AA1F3ABADF00491CEE /* b_newimg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 75FCA7A91F3ABADF00491CEE /* b_newimg.jpg */; };
+		75FCA7AD1F3AC06500491CEE /* tonsure_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75FCA7AB1F3AC06500491CEE /* tonsure_shader.frag */; };
+		75FCA7AE1F3AC06500491CEE /* tonsure_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75FCA7AC1F3AC06500491CEE /* tonsure_shader.vs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -897,6 +902,11 @@
 		75F827AE1F18A1EB001C219E /* demo_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = demo_data.h; sourceTree = "<group>"; };
 		75F9BB171F27330A00BAFF9F /* GPUImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageController.h; sourceTree = "<group>"; };
 		75F9BB181F27330A00BAFF9F /* GPUImageController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GPUImageController.mm; sourceTree = "<group>"; };
+		75FCA7A51F3AA8A600491CEE /* bilateral_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = bilateral_shader.frag; sourceTree = "<group>"; };
+		75FCA7A61F3AA8A600491CEE /* bilateral_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = bilateral_shader.vs; sourceTree = "<group>"; };
+		75FCA7A91F3ABADF00491CEE /* b_newimg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b_newimg.jpg; sourceTree = "<group>"; };
+		75FCA7AB1F3AC06500491CEE /* tonsure_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = tonsure_shader.frag; sourceTree = "<group>"; };
+		75FCA7AC1F3AC06500491CEE /* tonsure_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = tonsure_shader.vs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1104,6 +1114,8 @@
 		75AD85401F23341200047E84 /* OneTexture */ = {
 			isa = PBXGroup;
 			children = (
+				75FCA7AB1F3AC06500491CEE /* tonsure_shader.frag */,
+				75FCA7AC1F3AC06500491CEE /* tonsure_shader.vs */,
 				75B8E99C1F33315D002B2E42 /* OneInputController.h */,
 				75B8E99D1F33315D002B2E42 /* OneInputController.m */,
 				75B8E99F1F333170002B2E42 /* OneInputView.h */,
@@ -1170,6 +1182,7 @@
 		75D9B4AE1F2597B50098E816 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				75FCA7A41F3AA86D00491CEE /* BilateralBlur */,
 				75F56A0D1F39A88C0073EACD /* L0Smoothing */,
 				75B56CA11F38911000079CAB /* ParticleSystem */,
 				75B8E9971F333011002B2E42 /* Sketch */,
@@ -1324,6 +1337,7 @@
 		75DD07F51F28B7720032B94D /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				75FCA7A91F3ABADF00491CEE /* b_newimg.jpg */,
 				75F56B881F39BA620073EACD /* pflower.jpg */,
 				75B56C9A1F381C6800079CAB /* test002.jpg */,
 				75DD07F61F28B7720032B94D /* 12345.png */,
@@ -1862,6 +1876,15 @@
 			path = gpuimageTest;
 			sourceTree = "<group>";
 		};
+		75FCA7A41F3AA86D00491CEE /* BilateralBlur */ = {
+			isa = PBXGroup;
+			children = (
+				75FCA7A51F3AA8A600491CEE /* bilateral_shader.frag */,
+				75FCA7A61F3AA8A600491CEE /* bilateral_shader.vs */,
+			);
+			path = BilateralBlur;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1927,12 +1950,15 @@
 				75D9B4D31F2597B50098E816 /* 3d_demo1_shader.vs in Resources */,
 				75D1B2331F26EB4B00609457 /* blur_shader2.frag in Resources */,
 				753B6FFB1F223629009F8FFE /* scale_filter_shader.vs in Resources */,
+				75FCA7AD1F3AC06500491CEE /* tonsure_shader.frag in Resources */,
 				75DD07FF1F28B7720032B94D /* ID_44.bmp in Resources */,
+				75FCA7AA1F3ABADF00491CEE /* b_newimg.jpg in Resources */,
 				75D1B2381F27068100609457 /* blur_shader3.vs in Resources */,
 				75D9B5001F25A5F40098E816 /* filter_blur_shader.frag in Resources */,
 				75B8E9AC1F3341CA002B2E42 /* toon_shader.vs in Resources */,
 				75DD07FE1F28B7720032B94D /* 12345.png in Resources */,
 				75B56CA41F38915500079CAB /* particle_shader.frag in Resources */,
+				75FCA7AE1F3AC06500491CEE /* tonsure_shader.vs in Resources */,
 				75D9B4EA1F25998E0098E816 /* edge_detection_shader.frag in Resources */,
 				75B8E99B1F33309B002B2E42 /* sketch_shader.vs in Resources */,
 				75DD08011F28B7720032B94D /* IMG_1805.PNG in Resources */,
@@ -1942,10 +1968,12 @@
 				75D1B2341F26EB4B00609457 /* blur_shader2.vs in Resources */,
 				753B046C1F2988C10067B322 /* multiple_sample_shader.frag in Resources */,
 				75B8E9AB1F3341CA002B2E42 /* toon_shader.frag in Resources */,
+				75FCA7A81F3AA8A600491CEE /* bilateral_shader.vs in Resources */,
 				75DD09691F28B7D40032B94D /* Info.plist in Resources */,
 				75DD08041F28B7720032B94D /* sj_20160705_2_025.jpg in Resources */,
 				75024D221F3463CF00E90210 /* filter2_shader.frag in Resources */,
 				75B56C9B1F381C6800079CAB /* test002.jpg in Resources */,
+				75FCA7A71F3AA8A600491CEE /* bilateral_shader.frag in Resources */,
 				75D9B4D21F2597B50098E816 /* 3d_demo1_shader.frag in Resources */,
 				75F56B891F39BA620073EACD /* pflower.jpg in Resources */,
 				75CBAABC1F287630001E569C /* vert.glsl in Resources */,
