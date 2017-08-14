@@ -12,7 +12,10 @@
 #include <math.h>
 #include <limits>
 #include <opencv2/imgproc.hpp>
+#include <vector>
+#include <opencv2/photo/photo_c.h>
 #include "L0Smoothing.hpp"
+#import "OpenglesTool.h"
 
 using namespace cv;
 
@@ -36,26 +39,22 @@ using namespace cv;
     
     UIImage *image = [UIImage imageNamed:@"test002.jpg"];
     
-//    cv::Mat src;
-//    UIImageToMat(image, src);
-//    cv::Mat dst = dstL0Smoothing(src);
-//    UIImage *newImg = MatToUIImage(dst);
-//    NSLog(@"%@", NSStringFromCGSize(newImg.size));
     
     
-    
-    GPUImageSmoothToonFilter *filter = [[GPUImageSmoothToonFilter alloc] init];
-    
-    [filter setValue:@1.5 forKey:@"blurRadiusInPixels"];
-    [filter setValue:@0.25 forKey:@"threshold"];
-    [filter setValue:@15.0 forKey:@"quantizationLevels"];
-
-    
-//    GPUImageToonFilter *filter = [[GPUImageToonFilter alloc] init];
+//    GPUImageSmoothToonFilter *filter = [[GPUImageSmoothToonFilter alloc] init];
 //    
+//    [filter setValue:@1.5 forKey:@"blurRadiusInPixels"];
 //    [filter setValue:@0.25 forKey:@"threshold"];
-//    [filter setValue:@10.0 forKey:@"quantizationLevels"];
+//    [filter setValue:@15.0 forKey:@"quantizationLevels"];
 
+    
+    GPUImageToonFilter *filter = [[GPUImageToonFilter alloc] init];
+    
+    [filter setValue:@0.25 forKey:@"threshold"];
+    [filter setValue:@10.0 forKey:@"quantizationLevels"];
+
+    
+    
     
 //    GPUImageBilateralFilter *filter = [[GPUImageBilateralFilter alloc] init];
     
@@ -71,7 +70,6 @@ using namespace cv;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 
 

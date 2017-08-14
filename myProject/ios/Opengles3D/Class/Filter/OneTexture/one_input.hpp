@@ -45,6 +45,7 @@ public:
     GLuint textureId2;
     GLuint textureId3;
     GLuint textureId4;
+    GLuint textureId5;
     
     GLuint program2;
     GLuint program3;
@@ -56,6 +57,7 @@ public:
     GLuint framebuffer2;
     GLuint framebuffer3;
     GLuint framebuffer4;
+    GLuint framebuffer5;
     
     //双边模糊
     const char* bvShader;

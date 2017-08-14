@@ -41,14 +41,10 @@
     // 为 color renderbuffer 分配存储空间
     [_context renderbufferStorage:GL_RENDERBUFFER fromDrawable:_eaglLayer];
     
-    demo.renderToon();
+    demo.render();
     
     //将指定 renderbuffer 呈现在屏幕上，在这里我们指定的是前面已经绑定为当前 renderbuffer 的那个，在 renderbuffer 可以被呈现之前，必须调用renderbufferStorage:fromDrawable: 为之分配存储空间。
     [_context presentRenderbuffer:GL_RENDERBUFFER];
-    
-    
-
-    
 }
 
 
@@ -75,7 +71,7 @@
     demo.g_fShader = fShaderStr.c_str();
     
     
-    UIImage *image = [UIImage imageNamed:@"test002.jpg"];
+    UIImage *image = [UIImage imageNamed:@"IMG_1848.JPG"];
     
     unsigned char *buffer = [OpenglesTool getBuffer:image];
     
@@ -106,7 +102,7 @@
     
     NSLog(@"%f", [[NSDate date] timeIntervalSince1970]);
     
-    glBindFramebuffer(GL_FRAMEBUFFER, demo.framebuffer4);
+    glBindFramebuffer(GL_FRAMEBUFFER, demo.framebuffer2);
     
     glReadPixels(0, 0, demo.s_width, demo.s_height, GL_RGBA, GL_UNSIGNED_BYTE, demo.outBuffer);
     
@@ -119,7 +115,6 @@
     UIImage *newImg = MatToUIImage(src);
     
     NSLog(@"%@", NSStringFromCGSize(newImg.size));
-    
 }
 
 

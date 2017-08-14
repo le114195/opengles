@@ -16,7 +16,7 @@ uniform sampler2D inputImageTexture;
 
 void main()
 {
-    float edgeStrength = 1.5;
+    float edgeStrength = 2.5;
     
     float bottomLeftIntensity = texture2D(inputImageTexture, bottomLeftTextureCoordinate).r;
     float topRightIntensity = texture2D(inputImageTexture, topRightTextureCoordinate).r;
@@ -30,6 +30,9 @@ void main()
     float v = -bottomLeftIntensity - 2.0 * leftIntensity - topLeftIntensity + bottomRightIntensity + 2.0 * rightIntensity + topRightIntensity;
     
     float mag = length(vec2(h, v)) * edgeStrength;
+    mag = 1.0 - mag;
+    vec4 edgeColor = vec4(vec3(mag), 1.0);
     
-    gl_FragColor = vec4(vec3(mag), 1.0);
+    
+    gl_FragColor = texture2D(inputImageTexture, textureCoordinate) * edgeColor;
 }

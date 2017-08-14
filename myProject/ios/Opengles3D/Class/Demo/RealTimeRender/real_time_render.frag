@@ -1,10 +1,6 @@
 precision highp float;
-
 uniform sampler2D image;
-
 varying vec2 v_texCoord;
-
-
 void main()
 {
     vec4 color = texture2D(image, v_texCoord);

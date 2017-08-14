@@ -8,6 +8,7 @@
 
 #import "OneInputController.h"
 #import "OneInputView.h"
+#import <GLKit/GLKit.h>
 
 @interface OneInputController ()
 
