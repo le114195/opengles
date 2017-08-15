@@ -37,7 +37,7 @@ using namespace cv;
     
     [self.view addSubview:self.imgView];
     
-    UIImage *image = [UIImage imageNamed:@"test002.jpg"];
+    UIImage *image = [UIImage imageNamed:@"blend_origin.png"];
     
     
     
@@ -48,11 +48,16 @@ using namespace cv;
 //    [filter setValue:@15.0 forKey:@"quantizationLevels"];
 
     
-    GPUImageToonFilter *filter = [[GPUImageToonFilter alloc] init];
-    
-    [filter setValue:@0.25 forKey:@"threshold"];
-    [filter setValue:@10.0 forKey:@"quantizationLevels"];
+//    GPUImageToonFilter *filter = [[GPUImageToonFilter alloc] init];
+//    
+//    [filter setValue:@0.25 forKey:@"threshold"];
+//    [filter setValue:@10.0 forKey:@"quantizationLevels"];
 
+    
+    //混合
+    GPUImageLocalBinaryPatternFilter *filter = [[GPUImageLocalBinaryPatternFilter alloc] init];
+    
+    
     
     
     

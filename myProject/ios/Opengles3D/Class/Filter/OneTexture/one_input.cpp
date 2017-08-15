@@ -8,6 +8,7 @@
 
 #include "one_input.hpp"
 #include "dynamic_shader.hpp"
+#include <math.h>
 
 
 
@@ -32,8 +33,6 @@ void OneInput_C::setupFrameBuffer2()
     glGenFramebuffers(1, &framebuffer5);
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer5);
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, textureId5, 0);
-    
-    
 }
 
 void OneInput_C::Init()
@@ -42,12 +41,17 @@ void OneInput_C::Init()
     
 //    programObject = gl_esLoadProgram(bvShader, bfShader);//双边模糊
     
-    programObject = gl_esLoadProgram(tonsureVShader, tonsureFShader);//颜色梯度
+//    programObject = gl_esLoadProgram(tonsureVShader, tonsureFShader);//颜色梯度
     
+    programObject = gl_esLoadProgram(signalVShader, signalFShader);//信号干扰
     
-    toonProgram = gl_esLoadProgram(toonVShader, toonFSahder);
+//    programObject = gl_esLoadProgram(motionVShader, motionFShader);//运动模糊
     
-    gProgram = gl_esLoadProgram(g_vShader, g_fShader);
+//    gradualProgram = gl_esLoadProgram(gradualVShader, gradualFShader);//边缘渐变
+    
+//    toonProgram = gl_esLoadProgram(toonVShader, toonFSahder);
+//    
+//    gProgram = gl_esLoadProgram(g_vShader, g_fShader);
 }
 
 
@@ -66,33 +70,21 @@ void OneInput_C::setTexture(unsigned char *buffer, int width, int height, GLenum
 
 void OneInput_C::render()
 {
-//    static GLfloat vVertices[] = {
-//        -1.0f,  1.0f, 0.0f,  // Position 0
-//        0.0f,  0.0f,        // TexCoord 0
-//        -1.0f, -1.0f, 0.0f,  // Position 1
-//        0.0f,  1.0f,        // TexCoord 1
-//        1.0f, -1.0f, 0.0f,  // Position 2
-//        1.0f,  1.0f,        // TexCoord 2
-//        1.0f,  1.0f, 0.0f,  // Position 3
-//        1.0f,  0.0f,         // TexCoord 3
-//    };
     
     static GLfloat vVertices[] = {
         -1.0f,  1.0f, 0.0f,  // Position 0
-        0.0f,  1.0f,        // TexCoord 0
+        0.0f,  0.0f,        // TexCoord 0
         -1.0f, -1.0f, 0.0f,  // Position 1
-        0.0f,  0.0f,        // TexCoord 1
+        0.0f,  1.0f,        // TexCoord 1
         1.0f, -1.0f, 0.0f,  // Position 2
-        1.0f,  0.0f,        // TexCoord 2
+        1.0f,  1.0f,        // TexCoord 2
         1.0f,  1.0f, 0.0f,  // Position 3
-        1.0f,  1.0f,         // TexCoord 3
+        1.0f,  0.0f,         // TexCoord 3
     };
     
-    
     GLushort indices[] = { 0, 1, 2, 0, 2, 3 };
-
     
-    glBindFramebuffer(GL_FRAMEBUFFER, framebuffer2);
+    glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
     glUseProgram(programObject);
     
     glViewport(0, 0, s_width, s_height);
@@ -107,22 +99,19 @@ void OneInput_C::render()
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
     
-//    
-//    GLint xx = glGetUniformLocation(toonProgram, "texelWidth");
-//    GLint yy = glGetUniformLocation(toonProgram, "texelHeight");
-//    
-//    glUniform1f(xx, 1.0 / s_width);
-//    glUniform1f(yy, 1.0 / s_height);
-    
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, textureId);
     
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
-    glFlush();
-    
-    
-    
 
+//    motion_blur();
+    
+    signal_p();
+    
+    //启动混合：透明通道
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
+    
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
 }
 
 
@@ -252,6 +241,34 @@ void OneInput_C::renderToon()
 }
 
 
+void OneInput_C::motion_blur()
+{
+    //运动模糊参数
+    float _blurSize = 2.0;
+    float _blurAngle = 180.0;
+
+    float para[2] = {0.0, 0.0};
+    float aspectRatio = 1.0;
+    aspectRatio = (s_width / s_height);
+    para[0] = _blurSize * sin(_blurAngle * M_PI / 180.0) * aspectRatio / s_height;
+    para[1] = _blurSize * cos(_blurAngle * M_PI / 180.0) / s_height;
+
+    GLint paraLoc = glGetUniformLocation(programObject, "directionalTexelStep");
+    glUniform2fv(paraLoc, 1, para);
+}
+
+void OneInput_C::signal_p()
+{
+    //信号干扰参数
+    float location[3] = {0.1, 0.3, 0.5};
+    float width[3] = {0.05, 0.07, 0.15};
+    
+    GLint locationLoc = glGetUniformLocation(programObject, "location");
+    GLint widthLoc = glGetUniformLocation(programObject, "width");
+    
+    glUniform1fv(locationLoc, 3, location);
+    glUniform1fv(widthLoc, 3, width);
+}
 
 
 

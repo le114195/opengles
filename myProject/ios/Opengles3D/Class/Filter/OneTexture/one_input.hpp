@@ -14,6 +14,16 @@
 
 class OneInput_C:public NEW_OPENGLES_BASE
 {
+    
+private:
+    
+    /** 运动模糊参数 */
+    void motion_blur();
+    
+    /** 信号干扰参数 */
+    void signal_p();
+    
+    
 public:
     void setupFrameBuffer2();
     
@@ -27,6 +37,10 @@ public:
     
     void setTexture(unsigned char *buffer, int width, int height, GLenum format);
 public:
+    
+    unsigned char* buffer2;
+    int buffer2_w;
+    int buffer2_h;
     
     GLuint toonProgram;
     const char *toonVShader;
@@ -63,10 +77,22 @@ public:
     const char* bvShader;
     const char* bfShader;
     
-    
     //梯度
     const char *tonsureVShader;
     const char *tonsureFShader;
+    
+    //边缘渐变
+    const char *gradualVShader;
+    const char *gradualFShader;
+    GLuint gradualProgram;
+    
+    //信号干扰
+    const char *signalVShader;
+    const char *signalFShader;
+    
+    //运动模糊
+    const char *motionVShader;
+    const char *motionFShader;
     
 };
 

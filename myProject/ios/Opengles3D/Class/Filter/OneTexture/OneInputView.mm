@@ -11,6 +11,7 @@
 #include "one_input.hpp"
 #include "dynamic_shader.hpp"
 #include "OpencvHeader.h"
+#import "UIView+XL.h"
 
 @implementation OneInputView
 {
@@ -62,6 +63,15 @@
     demo.tonsureVShader = [OpenglesTool readFileData:@"tonsure_shader.vs"];
     demo.tonsureFShader = [OpenglesTool readFileData:@"tonsure_shader.frag"];
     
+    demo.gradualVShader = [OpenglesTool readFileData:@"gradual_shader.vs"];
+    demo.gradualFShader = [OpenglesTool readFileData:@"gradual_shader.frag"];
+    
+    demo.signalVShader = [OpenglesTool readFileData:@"signal_shader.vs"];
+    demo.signalFShader = [OpenglesTool readFileData:@"signal_shader.frag"];
+    
+    demo.motionVShader = [OpenglesTool readFileData:@"motionblur_shader.vs"];
+    demo.motionFShader = [OpenglesTool readFileData:@"motionblur_shader.frag"];
+    
     std::string vShaderStr, fShaderStr;
     
     gaussianVertexShaderStr(vShaderStr, 1.5);
@@ -70,22 +80,20 @@
     demo.g_vShader = vShaderStr.c_str();
     demo.g_fShader = fShaderStr.c_str();
     
-    
-    UIImage *image = [UIImage imageNamed:@"IMG_1848.JPG"];
+    UIImage *image = [UIImage imageNamed:@"IMG_1873.JPG"];
+    UIImage *image2 = [UIImage imageNamed:@"IMG_1848.JPG"];
     
     unsigned char *buffer = [OpenglesTool getBuffer:image];
+    demo.buffer2 = [OpenglesTool getBuffer:image2];
+    demo.buffer2_w = image2.size.width;
+    demo.buffer2_h = image2.size.height;
     
-    demo.s_width = image.size.width;
-    demo.s_height = image.size.height;
-    
+    demo.s_width = self.frame.size.width;
+    demo.s_height = self.frame.size.height;
     
     demo.outBuffer = (unsigned char *)malloc(sizeof(char) * demo.s_width * demo.s_height * 4);
     
-//    demo.textureId = createTexture2D(GL_RGBA, image.size.width, image.size.height, buffer);
-    
     demo.setTexture(buffer, image.size.width, image.size.height, GL_RGBA);
-    
-    
     demo.Init();
 }
 
@@ -100,21 +108,25 @@
 //    }
 //    [_context presentRenderbuffer:GL_RENDERBUFFER];
     
-    NSLog(@"%f", [[NSDate date] timeIntervalSince1970]);
+//    NSLog(@"%f", [[NSDate date] timeIntervalSince1970]);
+//    
+//    glBindFramebuffer(GL_FRAMEBUFFER, demo.framebuffer2);
+//    
+//    glReadPixels(0, 0, demo.s_width, demo.s_height, GL_RGBA, GL_UNSIGNED_BYTE, demo.outBuffer);
+//    
+//    NSLog(@"%f", [[NSDate date] timeIntervalSince1970]);
+//    
+//    cv::Mat src;
+//    src.create(demo.s_height, demo.s_width, CV_8UC4);
+//    memcpy(src.data, demo.outBuffer, demo.s_width * demo.s_height * 4);
+//    
+//    UIImage *newImg = MatToUIImage(src);
+//    
+//    NSLog(@"%@", NSStringFromCGSize(newImg.size));
     
-    glBindFramebuffer(GL_FRAMEBUFFER, demo.framebuffer2);
+    self.controller.navigationController.title = @"算法";
     
-    glReadPixels(0, 0, demo.s_width, demo.s_height, GL_RGBA, GL_UNSIGNED_BYTE, demo.outBuffer);
     
-    NSLog(@"%f", [[NSDate date] timeIntervalSince1970]);
-    
-    cv::Mat src;
-    src.create(demo.s_height, demo.s_width, CV_8UC4);
-    memcpy(src.data, demo.outBuffer, demo.s_width * demo.s_height * 4);
-    
-    UIImage *newImg = MatToUIImage(src);
-    
-    NSLog(@"%@", NSStringFromCGSize(newImg.size));
 }
 
 

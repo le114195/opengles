@@ -46,8 +46,8 @@
 
 - (void)setupGLData
 {
-    demo.vShader = [OpenglesTool readFileData:@"real_time_render.vs"];
-    demo.fShader = [OpenglesTool readFileData:@"real_time_render.frag"];
+    demo.vShader = [OpenglesTool readFileData:@"signal_shader.vs"];
+    demo.fShader = [OpenglesTool readFileData:@"signal_shader.frag"];
     
     demo.s_width = self.frame.size.width;
     demo.s_height = self.frame.size.height;
@@ -67,28 +67,7 @@
     //将指定 renderbuffer 呈现在屏幕上，在这里我们指定的是前面已经绑定为当前 renderbuffer 的那个，在 renderbuffer 可以被呈现之前，必须调用renderbufferStorage:fromDrawable: 为之分配存储空间。
     [_context presentRenderbuffer:GL_RENDERBUFFER];
     
-    glReadPixels(0, 0, demo.s_width, demo.s_height, GL_RGBA, GL_UNSIGNED_BYTE, demo.outBuffer);
-}
-
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    unsigned char *buffer = (unsigned char *)malloc(sizeof(unsigned char) * demo.s_width * demo.s_height * 4);
-    
-    NSLog(@"%f", [[NSDate date] timeIntervalSince1970]);
-    
-    glReadPixels(0, 0, demo.s_width, demo.s_height, GL_RGBA, GL_UNSIGNED_BYTE, buffer);
-    
-    NSLog(@"%f", [[NSDate date] timeIntervalSince1970]);
-    
-    cv::Mat src1;
-    src1.create(demo.s_height, demo.s_width, CV_8UC4);
-    memcpy(src1.data, buffer, demo.s_height * demo.s_width * 4);
-    UIImage *image1 = MatToUIImage(src1);
-    
-    NSLog(@"%@", NSStringFromCGSize(image1.size));
-    
-    free(buffer);
+//    glReadPixels(0, 0, demo.s_width, demo.s_height, GL_RGBA, GL_UNSIGNED_BYTE, demo.outBuffer);
 }
 
 

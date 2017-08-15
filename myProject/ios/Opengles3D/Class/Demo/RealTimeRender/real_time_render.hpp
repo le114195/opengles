@@ -14,6 +14,12 @@
 
 class REALTIMERENDER:public NEW_OPENGLES_BASE
 {
+    
+private:
+    
+    void setupSignalP();
+    
+    
 public:
     
     void Init();

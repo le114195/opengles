@@ -8,10 +8,10 @@
 
 #import "RootViewController.h"
 #import "NSArray+Safe.h"
+#import "TypeViewController.h"
+
 
 @interface RootViewController ()<UITableViewDelegate, UITableViewDataSource>
-
-@property (nonatomic, strong) NSArray    *dataArray;
 
 @property (nonatomic, strong) NSArray    *nameArray;
 
@@ -25,10 +25,8 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    self.dataArray = @[@"ViewController", @"Demo2ViewController", @"Demo3ViewController", @"Demo4ViewController", @"Demo5ViewController", @"Filter1Controller", @"Filter2Controller", @"FilterScaleController", @"BlendController", @"OneInputController", @"EdgeDetectionController", @"ColorShakeController", @"SobelEdgeController", @"GPUImageController", @"FrameBufferController", @"DoubleSampleController", @"GaussianBlurController", @"MultipleSampleController", @"RealTimeController", @"ParticleSystemController"];
-    
-    self.nameArray = @[@"demo1", @"demo2", @"demo3"];
+
+    self.nameArray = @[@"demo", @"算法", @"滤镜"];
     
     [self tableviewConfigure];
     
@@ -54,25 +52,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.dataArray.count;
+    return self.nameArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"demo%ld:%@", (long)indexPath.row, self.dataArray[indexPath.row]];
+    cell.textLabel.text = self.nameArray[indexPath.row];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *className = self.dataArray[indexPath.row];
-    
-    UIViewController *vc = [[NSClassFromString(className) alloc] init];
-    [self.navigationController pushViewController:vc animated:true];
-
+    TypeViewController *typeVC = [TypeViewController type:indexPath.row];
+    [self .navigationController pushViewController:typeVC animated:YES];
 }
 
 
