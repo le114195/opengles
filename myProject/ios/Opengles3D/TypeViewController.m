@@ -43,8 +43,8 @@
         self.nameArray = @[@"边缘检测算法", @"sobel边缘检测算法", @"算法集合", @"混合算法", @"高斯模糊"];
         
     }else if (self.type == 2) {//滤镜
-        self.dataArray = @[@"Filter1Controller", @"Filter2Controller", @"ColorShakeController", @"SignalController"];
-        self.nameArray = @[@"灵魂出窍滤镜", @"移形换影滤镜", @"色层偏移", @"信号干扰滤镜"];
+        self.dataArray = @[@"Filter1Controller", @"Filter2Controller", @"ColorShakeController", @"SignalController", @"LighterController"];
+        self.nameArray = @[@"灵魂出窍滤镜", @"移形换影滤镜", @"色层偏移", @"信号干扰滤镜", @"灯罩"];
         
     }else {
         self.dataArray = @[];

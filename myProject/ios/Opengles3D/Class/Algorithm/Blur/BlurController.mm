@@ -81,7 +81,6 @@
 //}
 
     
-    
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     int width = _esContext.width;

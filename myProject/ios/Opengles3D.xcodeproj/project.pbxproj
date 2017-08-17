@@ -19,9 +19,18 @@
 		751FF16E1F44342B0055FB2E /* alpha_blend_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 751FF16C1F44342B0055FB2E /* alpha_blend_shader.vs */; };
 		751FF1701F44359B0055FB2E /* edge_dim.png in Resources */ = {isa = PBXBuildFile; fileRef = 751FF16F1F44359B0055FB2E /* edge_dim.png */; };
 		751FF1781F443D0C0055FB2E /* nose8.png in Resources */ = {isa = PBXBuildFile; fileRef = 751FF1771F443D0C0055FB2E /* nose8.png */; };
+		7523D80A1F4545460066435B /* LighterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7523D8091F4545460066435B /* LighterController.m */; };
+		7523D80D1F45455D0066435B /* LighterView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7523D80C1F45455D0066435B /* LighterView.mm */; };
+		7523D8101F45456C0066435B /* LighterFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7523D80E1F45456C0066435B /* LighterFilter.cpp */; };
+		7523D82B1F456E930066435B /* lighter_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7523D8291F456E930066435B /* lighter_shader.frag */; };
+		7523D82C1F456E930066435B /* lighter_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 7523D82A1F456E930066435B /* lighter_shader.vs */; };
+		7523D82F1F4587800066435B /* zoom_blur_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7523D82D1F4587800066435B /* zoom_blur_shader.frag */; };
+		7523D8301F4587800066435B /* zoom_blur_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 7523D82E1F4587800066435B /* zoom_blur_shader.vs */; };
 		752D39211F2895AE001859FF /* GaussianBlurView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 752D39201F2895AE001859FF /* GaussianBlurView.mm */; };
 		752D39241F2895C2001859FF /* GaussianBlurController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752D39231F2895C2001859FF /* GaussianBlurController.m */; };
 		752D39271F289745001859FF /* gaussian_blur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 752D39251F289745001859FF /* gaussian_blur.cpp */; };
+		75386DB21F459AE500DE163C /* zoom2_blur_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 75386DB01F459AE500DE163C /* zoom2_blur_shader.frag */; };
+		75386DB31F459AE500DE163C /* zoom2_blur_shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 75386DB11F459AE500DE163C /* zoom2_blur_shader.vs */; };
 		753B04641F29844C0067B322 /* MultipleSampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B04631F29844C0067B322 /* MultipleSampleController.m */; };
 		753B04671F2984640067B322 /* MultipleSampleView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 753B04661F2984640067B322 /* MultipleSampleView.mm */; };
 		753B046A1F29847B0067B322 /* multiple_sample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 753B04681F29847B0067B322 /* multiple_sample.cpp */; };
@@ -373,12 +382,24 @@
 		751FF16C1F44342B0055FB2E /* alpha_blend_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = alpha_blend_shader.vs; sourceTree = "<group>"; };
 		751FF16F1F44359B0055FB2E /* edge_dim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edge_dim.png; sourceTree = "<group>"; };
 		751FF1771F443D0C0055FB2E /* nose8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nose8.png; sourceTree = "<group>"; };
+		7523D8081F4545460066435B /* LighterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LighterController.h; sourceTree = "<group>"; };
+		7523D8091F4545460066435B /* LighterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LighterController.m; sourceTree = "<group>"; };
+		7523D80B1F45455D0066435B /* LighterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LighterView.h; sourceTree = "<group>"; };
+		7523D80C1F45455D0066435B /* LighterView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LighterView.mm; sourceTree = "<group>"; };
+		7523D80E1F45456C0066435B /* LighterFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LighterFilter.cpp; sourceTree = "<group>"; };
+		7523D80F1F45456C0066435B /* LighterFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LighterFilter.hpp; sourceTree = "<group>"; };
+		7523D8291F456E930066435B /* lighter_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lighter_shader.frag; sourceTree = "<group>"; };
+		7523D82A1F456E930066435B /* lighter_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lighter_shader.vs; sourceTree = "<group>"; };
+		7523D82D1F4587800066435B /* zoom_blur_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = zoom_blur_shader.frag; sourceTree = "<group>"; };
+		7523D82E1F4587800066435B /* zoom_blur_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = zoom_blur_shader.vs; sourceTree = "<group>"; };
 		752D391F1F2895AE001859FF /* GaussianBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussianBlurView.h; sourceTree = "<group>"; };
 		752D39201F2895AE001859FF /* GaussianBlurView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GaussianBlurView.mm; sourceTree = "<group>"; };
 		752D39221F2895C2001859FF /* GaussianBlurController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussianBlurController.h; sourceTree = "<group>"; };
 		752D39231F2895C2001859FF /* GaussianBlurController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaussianBlurController.m; sourceTree = "<group>"; };
 		752D39251F289745001859FF /* gaussian_blur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gaussian_blur.cpp; sourceTree = "<group>"; };
 		752D39261F289745001859FF /* gaussian_blur.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gaussian_blur.hpp; sourceTree = "<group>"; };
+		75386DB01F459AE500DE163C /* zoom2_blur_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = zoom2_blur_shader.frag; sourceTree = "<group>"; };
+		75386DB11F459AE500DE163C /* zoom2_blur_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = zoom2_blur_shader.vs; sourceTree = "<group>"; };
 		753B04621F29844C0067B322 /* MultipleSampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleSampleController.h; sourceTree = "<group>"; };
 		753B04631F29844C0067B322 /* MultipleSampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleSampleController.m; sourceTree = "<group>"; };
 		753B04651F2984640067B322 /* MultipleSampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleSampleView.h; sourceTree = "<group>"; };
@@ -1015,6 +1036,21 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		7523D8071F45451B0066435B /* Lighter */ = {
+			isa = PBXGroup;
+			children = (
+				7523D8291F456E930066435B /* lighter_shader.frag */,
+				7523D82A1F456E930066435B /* lighter_shader.vs */,
+				7523D8081F4545460066435B /* LighterController.h */,
+				7523D8091F4545460066435B /* LighterController.m */,
+				7523D80B1F45455D0066435B /* LighterView.h */,
+				7523D80C1F45455D0066435B /* LighterView.mm */,
+				7523D80E1F45456C0066435B /* LighterFilter.cpp */,
+				7523D80F1F45456C0066435B /* LighterFilter.hpp */,
+			);
+			path = Lighter;
+			sourceTree = "<group>";
+		};
 		752D391E1F28957F001859FF /* GaussianBlur */ = {
 			isa = PBXGroup;
 			children = (
@@ -1093,6 +1129,7 @@
 		757B88481F21970F006A79DB /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				7523D8071F45451B0066435B /* Lighter */,
 				75F74EAD1F4324FF00D1869B /* signal */,
 				75D9B4EC1F259A560098E816 /* ColorShake */,
 				75AD85401F23341200047E84 /* OneTexture */,
@@ -1419,6 +1456,10 @@
 		75D9B4F71F25A50F0098E816 /* Blur */ = {
 			isa = PBXGroup;
 			children = (
+				75386DB01F459AE500DE163C /* zoom2_blur_shader.frag */,
+				75386DB11F459AE500DE163C /* zoom2_blur_shader.vs */,
+				7523D82D1F4587800066435B /* zoom_blur_shader.frag */,
+				7523D82E1F4587800066435B /* zoom_blur_shader.vs */,
 				75D1B2351F27068100609457 /* blur_shader3.frag */,
 				75D1B2361F27068100609457 /* blur_shader3.vs */,
 				75D1B2311F26EB4B00609457 /* blur_shader2.frag */,
@@ -2136,8 +2177,11 @@
 				759A66281F41876B00674255 /* gradual_shader.frag in Resources */,
 				75D1B2341F26EB4B00609457 /* blur_shader2.vs in Resources */,
 				753B046C1F2988C10067B322 /* multiple_sample_shader.frag in Resources */,
+				7523D82F1F4587800066435B /* zoom_blur_shader.frag in Resources */,
 				75B8E9AB1F3341CA002B2E42 /* toon_shader.frag in Resources */,
 				759A662E1F41B4FC00674255 /* signal_shader.vs in Resources */,
+				75386DB21F459AE500DE163C /* zoom2_blur_shader.frag in Resources */,
+				7523D82B1F456E930066435B /* lighter_shader.frag in Resources */,
 				759A66241F4151F800674255 /* IMG_1873.JPG in Resources */,
 				751FF16A1F4430030055FB2E /* line2.png in Resources */,
 				75FCA7A81F3AA8A600491CEE /* bilateral_shader.vs in Resources */,
@@ -2180,6 +2224,7 @@
 				75CBAAD41F2887AA001E569C /* double_sample_shader_bw.frag in Resources */,
 				75DD08001F28B7720032B94D /* IMG_1072.PNG in Resources */,
 				756EBB341F284CEE00C2B479 /* frame_buffer_shader.frag in Resources */,
+				7523D82C1F456E930066435B /* lighter_shader.vs in Resources */,
 				75F74E8D1F42F29B00D1869B /* rand_nose_shader.frag in Resources */,
 				759A66291F41876B00674255 /* gradual_shader.vs in Resources */,
 				759A662D1F41B4FC00674255 /* signal_shader.frag in Resources */,
@@ -2194,7 +2239,9 @@
 				751FF1701F44359B0055FB2E /* edge_dim.png in Resources */,
 				75DD08031F28B7720032B94D /* sj_20160705_2.JPG in Resources */,
 				751FF1781F443D0C0055FB2E /* nose8.png in Resources */,
+				7523D8301F4587800066435B /* zoom_blur_shader.vs in Resources */,
 				75DD08021F28B7720032B94D /* sj_20160705_1.JPG in Resources */,
+				75386DB31F459AE500DE163C /* zoom2_blur_shader.vs in Resources */,
 				75D9B5091F25EE430098E816 /* sobel_edge_shader.vs in Resources */,
 				75D9B4F51F259AB60098E816 /* color_shake_shader.frag in Resources */,
 				756EBB371F284CEE00C2B479 /* frame_buffer_shader2.vs in Resources */,
@@ -2227,6 +2274,7 @@
 				75DD09D91F28B7D40032B94D /* GPUImagePicture.m in Sources */,
 				75B56CAE1F3895A600079CAB /* ParticleSystem.cpp in Sources */,
 				75CBAAD91F2887C6001E569C /* double_sample.cpp in Sources */,
+				7523D8101F45456C0066435B /* LighterFilter.cpp in Sources */,
 				75DD09C81F28B7D40032B94D /* GPUImageMosaicFilter.m in Sources */,
 				75DD0A131F28B7D40032B94D /* GPUImageWeakPixelInclusionFilter.m in Sources */,
 				75E832E61F174EEC00F53588 /* OpenglesBase.cpp in Sources */,
@@ -2316,6 +2364,7 @@
 				757B885A1F21AA4C006A79DB /* filter_demo2.cpp in Sources */,
 				75DD09CE1F28B7D40032B94D /* GPUImageMultiplyBlendFilter.m in Sources */,
 				75DD09AA1F28B7D40032B94D /* GPUImageHighlightShadowTintFilter.m in Sources */,
+				7523D80D1F45455D0066435B /* LighterView.mm in Sources */,
 				75DD09761F28B7D40032B94D /* GPUImageBuffer.m in Sources */,
 				75DD09771F28B7D40032B94D /* GPUImageBulgeDistortionFilter.m in Sources */,
 				75DD096C1F28B7D40032B94D /* GPUImage3x3TextureSamplingFilter.m in Sources */,
@@ -2328,6 +2377,7 @@
 				75DD09DD1F28B7D40032B94D /* GPUImagePoissonBlendFilter.m in Sources */,
 				75F74EB31F43251E00D1869B /* SignalView.mm in Sources */,
 				75DD09AB1F28B7D40032B94D /* GPUImageHighPassFilter.m in Sources */,
+				7523D80A1F4545460066435B /* LighterController.m in Sources */,
 				75DD0A001F28B7D40032B94D /* GPUImageThreeInputFilter.m in Sources */,
 				75DD09CF1F28B7D40032B94D /* GPUImageNobleCornerDetectionFilter.m in Sources */,
 				75DD099A1F28B7D40032B94D /* GPUImageFilterGroup.m in Sources */,
