@@ -5,7 +5,7 @@ varying highp vec2 textureCoordinate2;
 uniform sampler2D inputImageTexture;
 uniform sampler2D inputImageTexture2;
 
-const float alpha_t = 0.2;
+const float alpha_t = 0.3;
 
 void main()
 {
@@ -17,4 +17,6 @@ void main()
     float b = alpha_t * top.b + (1.0 - alpha_t) * bottom.b;
     
     gl_FragColor = vec4(r, g, b, 1.0);
+    
+    
 }

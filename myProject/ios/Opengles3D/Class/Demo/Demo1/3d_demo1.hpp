@@ -52,11 +52,9 @@ public:
         int buffer1_width;
         int buffer1_height;
         
-        
         char *buffer2;
         int buffer2_width;
         int buffer2_height;
-        
     };
 };
 

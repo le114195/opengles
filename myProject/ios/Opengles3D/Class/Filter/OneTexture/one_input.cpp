@@ -43,9 +43,9 @@ void OneInput_C::Init()
     
 //    programObject = gl_esLoadProgram(tonsureVShader, tonsureFShader);//颜色梯度
     
-    programObject = gl_esLoadProgram(signalVShader, signalFShader);//信号干扰
+//    programObject = gl_esLoadProgram(signalVShader, signalFShader);//信号干扰
     
-//    programObject = gl_esLoadProgram(motionVShader, motionFShader);//运动模糊
+    programObject = gl_esLoadProgram(motionVShader, motionFShader);//运动模糊
     
 //    gradualProgram = gl_esLoadProgram(gradualVShader, gradualFShader);//边缘渐变
     
@@ -103,9 +103,9 @@ void OneInput_C::render()
     glBindTexture(GL_TEXTURE_2D, textureId);
     
 
-//    motion_blur();
+    motion_blur();
     
-    signal_p();
+//    signal_p();
     
     //启动混合：透明通道
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -237,7 +237,6 @@ void OneInput_C::renderToon()
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, textureId4);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
-    
 }
 
 
@@ -249,12 +248,10 @@ void OneInput_C::motion_blur()
 
     float para[2] = {0.0, 0.0};
     float aspectRatio = 1.0;
-    aspectRatio = (s_width / s_height);
+    aspectRatio = (1.0 * s_width / s_height);
     para[0] = _blurSize * sin(_blurAngle * M_PI / 180.0) * aspectRatio / s_height;
     para[1] = _blurSize * cos(_blurAngle * M_PI / 180.0) / s_height;
-
-    GLint paraLoc = glGetUniformLocation(programObject, "directionalTexelStep");
-    glUniform2fv(paraLoc, 1, para);
+    glUniform2fv(glGetUniformLocation(programObject, "directionalTexelStep"), 1, para);
 }
 
 void OneInput_C::signal_p()
@@ -263,11 +260,8 @@ void OneInput_C::signal_p()
     float location[3] = {0.1, 0.3, 0.5};
     float width[3] = {0.05, 0.07, 0.15};
     
-    GLint locationLoc = glGetUniformLocation(programObject, "location");
-    GLint widthLoc = glGetUniformLocation(programObject, "width");
-    
-    glUniform1fv(locationLoc, 3, location);
-    glUniform1fv(widthLoc, 3, width);
+    glUniform1fv(glGetUniformLocation(programObject, "location"), 3, location);
+    glUniform1fv(glGetUniformLocation(programObject, "width"), 3, width);
 }
 
 

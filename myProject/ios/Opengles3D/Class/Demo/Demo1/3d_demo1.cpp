@@ -97,6 +97,8 @@ void DEMO1::Draw ( ESContext *esContext ) {
     
     glUniform1f(userData->baseMapLoc, 0);
     
+    glUniform1f(glGetUniformLocation(userData->programObject, "alpha_t"), 1.0);
+    
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
     
     glActiveTexture(GL_TEXTURE0);
@@ -106,6 +108,8 @@ void DEMO1::Draw ( ESContext *esContext ) {
     //启动混合：透明通道
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
+    
+    glUniform1f(glGetUniformLocation(userData->programObject, "alpha_t"), 0.5);
     
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices + 6);
 }
